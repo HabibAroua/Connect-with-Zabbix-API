@@ -63,12 +63,12 @@ export class MyMap extends  React.Component
         )
     }
 }
-export default GoogleApiWrapper
-(
-    {
+//export default GoogleApiWrapper
+//(
+ //   {
         //AIzaSyBSsKUzYG_Wz7u2qL6unHqfBOmvaZ0H1Mg&callback essai
-        apiKey: ("AIzaSyBSsKUzYG_Wz7u2qL6unHqfBOmvaZ0H1Mg&callback")
+   //     apiKey: ("AIzaSyBSsKUzYG_Wz7u2qL6unHqfBOmvaZ0H1Mg&callback")
         //AIzaSyBlHN35O4hFNNf1CqMF7AncCLAjkNREQvE imen
-    }
-)
-(MyMap)
+    //}
+//)
+//(MyMap)

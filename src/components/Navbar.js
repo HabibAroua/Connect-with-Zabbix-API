@@ -10,33 +10,6 @@ class Navbar extends Component
         nb:[]
     }
 
-    componentDidMount()
-    {
-        const token=localStorage.usertoken;
-        if(token==null)
-        {
-			//Error
-        }
-        else
-        {
-            const decode=jwt_decode(token);
-            axios.post("http://localhost:5000/notifications/nbNotification",
-			{
-                idu:decode.id
-            })
-            .then(res=>
-            {
-                this.setState(
-                {
-                    nb : res.data
-                })
-            });
-            if(decode.rule=='1')
-            {
-				window.$("#usermanagement").hide();
-		    }
-		}
-    }
     logOut(e)
     {
         e.preventDefault();

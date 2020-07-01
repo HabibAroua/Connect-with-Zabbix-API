@@ -1,4 +1,7 @@
 <?php
+
+	header('Access-Control-Allow-Origin: *');
+	header('Access-Control-Allow-Headers: *');
     // The data to send to the API
     $authToken = 'OAuth 2.0 token here';
     if((isset($_POST['user'])) && (isset($_POST['password'])))
