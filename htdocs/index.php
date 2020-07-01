@@ -42,7 +42,7 @@
        
         // Decode the response
         $responseData = json_decode($response, TRUE);
-        echo $response; // You should use json format
+        echo $responseData['result']; // You should use json format
     }
     else
     {
