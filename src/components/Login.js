@@ -6,7 +6,7 @@ class Login extends Component
 {
     login(user)
     {
-	    /*return axios
+	    return axios
             .post('users/login',
 	    {
                 email : user.email,
@@ -20,7 +20,7 @@ class Login extends Component
             .catch(err =>
             {
                 console.log("error : "+err)
-            })*/
+            })
 			alert("Hello world");
     }
     constructor() 
@@ -88,72 +88,37 @@ class Login extends Component
                 }
                 else
                 {
-                    if(!this.IsEmail(user.email))
-                    {
-                        window.Swal.fire
-                        (
-                            'Error',
-                            'Please write a valid email',
-                            'error'
-                        )
-                    }
-                    else
-                    {
-						var postData = {
-								  jsonrpc: "2.0",
-									method: "user.login",
-									params: {
-										user: "Admin",
-										password: "zabbix"
-									},
-									id: 1,
-									auth: null
-								};
-
-								const requestOptions = {
-									method: 'POST',
-									headers: {'Access-Control-Allow-Origin': '*' , "Content-Type": "application/json" },
-									body: JSON.stringify({ jsonrpc: "2.0",
-															method: "user.login",
-															params: {
-																user: "Admin",
-																	password: "zabbix"
-																},
-																id: 1,
-														auth: null }
-														)
-								};
-								fetch('http://51.178.169.200/zabbix/api_jsonrpc.php', requestOptions)
-									.then(response => response.json())
-									.then(data => alert(data));
-                        /*this.login(user).then(res =>
-                        {
-                            e.preventDefault();
-                            if (res)
-                            {
-                                this.props.history.push('/profile')
-                                window.location.reload();
-                            }
-                            else
-                            {
-                                if(res==null)
-                                {
-                                    window.Swal.fire
-                                    (
-                                        'Error!',
-                                        "email and password are not correct",
-                                        'error'
-                                    )
-                                    console.log("email and password are not correct");
-                                }
-                            }
-                        })*/
+                    this.login(user).then
+					(
+						res =>
+						{
+							e.preventDefault();
+							if (res)
+							{
+								this.props.history.push('/profile')
+								window.location.reload();
+							}
+							else
+							{
+								if(res==null)
+								{
+									window.Swal.fire
+									(
+										'Error!',
+										"email and password are not correct",
+										'error'
+									)
+									console.log("email and password are not correct");
+								}
+							}
+						}
+					)
 						
-                    }
-                }
+				}
             }
         }
     }
+
 
     render() 
 	{
