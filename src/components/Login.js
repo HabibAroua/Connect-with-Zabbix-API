@@ -6,16 +6,26 @@ class Login extends Component
 {
     login(user)
     {
+		
 	    return axios
-            .post('http://192.168.1.4/zabbix/',
-	    {
+            .post('http://localhost/zabbix/',
+			{
                 user : user.email,
                 password : user.password
-            })
+			})
+			
             .then(res =>
             {
-                localStorage.setItem('usertoken',res.data)
-                return res.data
+				//console.log(res.data);
+				if(res.data== "Error")
+				{
+					return null;
+				}
+				else
+				{
+					localStorage.setItem('usertoken',res.data)
+					return res.data
+				}
             })
             .catch(err =>
             {
