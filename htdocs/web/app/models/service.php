@@ -73,7 +73,18 @@
 		// C.R.U.D operation
 		public function add()
 		{
-			
+			return input
+				(
+				 "insert into service values
+					(
+						'$this->id_service',
+						'$this->root',
+						'$this->status',
+						'$this->problem_time',
+						'$this->sla',
+						'$this->acceptable_sla
+					);"
+				);
 		}
 		
 	}
