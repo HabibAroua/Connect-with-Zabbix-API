@@ -16,3 +16,8 @@ create table Host_Service
     host_name varchar(40) unique,
     ip_address varchar(15)
 );
+
+create table Value_SLA
+(
+    val float
+);
