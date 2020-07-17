@@ -1,14 +1,45 @@
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">
-            <h2>Add new Service</h2>              
+            <center>
+                <h2>All services</h2>
+            </center>
         </div>
 		<div class="row">
             <div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
                         <div class="row">
-							
+                            <table  class="table table-striped table-hover" id="example">
+                                <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Id Service</th>
+                                        <th>Ip Address</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $s = new serviceController();
+                                        $T = $s->getAllService();
+                                        foreach ($T as $v)
+                                        {
+                                            $host_name = $v{'host_name'};
+                                            $id = $v{'id'};
+                                            $ip_address= $v{'ip_address'};
+                                            echo "<tr>";
+                                                echo "<td>$host_name</td>";
+                                                echo "<td>$id</td>";
+                                                echo "<td>$ip_address</td>";
+                                                echo "<td><a>Update</a></td>";
+                                                echo "<td><a>Delete</a></td>";
+                                            echo "</tr>";
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
 						</div>
 					</div>
 				</div>
@@ -16,3 +47,8 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+    $("#example").dataTable();
+</script>

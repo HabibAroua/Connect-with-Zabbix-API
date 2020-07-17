@@ -42,7 +42,7 @@
 							<a  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
 						</li>
 						<li>
-							<a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
+							<a  href="?page=list_service"><i class="fa fa-desktop fa-3x"></i> All Services</a>
 						</li>
 						<li>
 							<a href="index.php?page=add_service"><i class="fa fa-edit fa-3x"></i> Add Host </a>
@@ -100,6 +100,8 @@
 						switch ($_GET['page'])
 						{
 							case 'add_service' : require_once('../app/views/addService.php');
+							break;
+							case 'list_service' : require_once('../app/views/List_service.php');
 							break;
 						}
 					}
