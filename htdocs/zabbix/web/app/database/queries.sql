@@ -8,4 +8,11 @@ create table service
 	problem_time double,
 	sla double,
 	acceptable_sla double default 99.90000
-)
+);
+
+create table Host_Service
+(
+    id int primary key,
+    host_name varchar(40) unique,
+    ip_address varchar(15)
+);

@@ -1,7 +1,9 @@
 <?php
 
 	require_once('../app/database/connection.php');
+	require_once('../app/database/query.php');
 	require_once('../app/models/service.php');
+	require_once('../app/models/host_service.php');
 	require_once('../app/controllers/serviceController.php');
 	$service = new Service();
 ?>
