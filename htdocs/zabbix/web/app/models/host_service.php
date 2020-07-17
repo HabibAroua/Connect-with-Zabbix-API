@@ -1,4 +1,6 @@
 <?php
+
+
 	class Host_Service
 	{
 		private $id;
@@ -51,7 +53,20 @@
 				);
 		}
 		
-		//show all
+		public function getAllService()
+        {
+			$res=output("select * from host_service");
+            $i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i]=$reservation = array('id'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",);
+                $i++;
+			}
+			return $T;
+	}
+		
+		//To_String()
 		public function toString()
 		{
 			return "ID : ".$this->id." Host Name : ".$this->host_name." Ip address :".$this->ip_address;

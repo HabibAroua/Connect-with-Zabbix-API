@@ -45,6 +45,9 @@
 							<a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
 						</li>
 						<li>
+							<a href="index.php?page=add_service"><i class="fa fa-edit fa-3x"></i> Add Host </a>
+						</li>
+						<li>
 							<a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
 						</li>
 						<li>
@@ -52,9 +55,6 @@
 						</li>	
 						<li>
 							<a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
-						</li>
-						<li>
-							<a href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
 						</li>				                
 						<li>
 							<a href="#">

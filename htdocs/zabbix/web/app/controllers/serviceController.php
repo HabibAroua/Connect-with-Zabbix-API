@@ -27,5 +27,11 @@
 					  </script>";
 			}
 		}
+		
+		public function getAllService()
+		{
+			$s = new Host_Service();
+			return ($s->getAllService());
+		}
 	}
 ?>
