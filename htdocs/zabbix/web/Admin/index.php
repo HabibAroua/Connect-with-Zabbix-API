@@ -50,7 +50,10 @@
 							<a href="index.php?page=add_service"><i class="fa fa-edit fa-3x"></i> Add Host </a>
 						</li>
 						<li>
-							<a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
+							<a href="index.php?page=add_status_sla"><i class="fa fa-edit fa-3x"></i> Change the sla value </a>
+						</li>
+						<li>
+							<a  href="?page=sla_today"><i class="fa fa-qrcode fa-3x"></i> Actaul SLA</a>
 						</li>
 						<li>
 							<a  href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
@@ -106,6 +109,8 @@
 							case 'list_service' : require_once('../app/views/List_service.php');
 							break;
 							case 'add_status_sla' : require_once('../app/views/add_status_sla.php');
+							break;
+							case 'sla_today' : require_once('../app/views/sla_today.php');
 							break;
 						}
 					}

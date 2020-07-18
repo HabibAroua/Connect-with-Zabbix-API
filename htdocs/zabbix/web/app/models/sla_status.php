@@ -71,6 +71,7 @@
 				$T[$i]=$result = array('date_s'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",'actual_sla'=>$tab[3]."",);
                 $i++;
 			}
+			return $T;
 		}
 		
 		//toString

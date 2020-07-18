@@ -28,5 +28,11 @@
 					  </script>";
 			}
 		}
+		
+		public function sla_Today()
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getResultByDate();
+		}
 	}
 ?>
