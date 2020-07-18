@@ -21,3 +21,13 @@ create table Value_SLA
 (
     val float
 );
+
+create table sla_status
+(
+    id int PRIMARY Key AUTO_INCREMENT,
+    date_s	date,
+    actual_sla float,
+    id_service int
+);
+
+alter table sla_status add CONSTRAINT fk1 FOREIGN key (id_service) REFERENCES host_service(id);
