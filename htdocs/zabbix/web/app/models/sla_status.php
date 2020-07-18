@@ -57,6 +57,8 @@
 		//getResultByDate
 		public function getResultByDate()
 		{
+			$value_sla = new value_sla();
+			echo 'the value is '.$value_sla->getValue_Sla();
 			$res = output
 					(
 						"select sla_status.date_s, host_service.host_name , host_service.ip_address , sla_status.actual_sla
@@ -66,9 +68,21 @@
 						sla_status.date_s = CURRENT_DATE()"
 					);
 			$i = 0;
+			$status_of_the_infrastructure='';
 			while($tab=$res->fetch(PDO::FETCH_NUM))
             {
-				$T[$i]=$result = array('date_s'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",'actual_sla'=>$tab[3]."",);
+				if ($tab[3]>=$value_sla->getValue_Sla())
+				{
+					$status_of_the_infrastructure='Up';
+				}
+				else
+				{
+					if($tab[3]<$value_sla->getValue_Sla())
+					{
+						$status_of_the_infrastructure='Down';
+					}
+				}
+				$T[$i]=$result = array('date_s'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",'actual_sla'=>$tab[3]."",'status_of_the_infrastructure'=>$status_of_the_infrastructure,);
                 $i++;
 			}
 			return $T;

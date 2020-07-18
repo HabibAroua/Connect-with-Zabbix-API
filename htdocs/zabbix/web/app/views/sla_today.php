@@ -17,6 +17,7 @@
                                         <th>Service</th>
                                         <th>Ip Address</th>
 										<th>Actual SLA</th>
+                                        <th>Status of the infrastructure</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -29,11 +30,13 @@
                                             $host_name = $v{'host_name'};
                                             $ip_address= $v{'ip_address'};
 											$actual_sla = $v{'actual_sla'};
+                                            $status_of_the_infrastructure = $v{'status_of_the_infrastructure'};
                                             echo "<tr>";
                                                 echo "<td>$date_s</td>";
                                                 echo "<td>$host_name</td>";
                                                 echo "<td>$ip_address</td>";
 												echo "<td>$actual_sla</td>";
+                                                echo "<td>$status_of_the_infrastructure</td>";
                                             echo "</tr>";
                                         }
                                     ?>

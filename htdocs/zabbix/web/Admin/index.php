@@ -2,6 +2,7 @@
 
 	require_once('../app/database/connection.php');
 	require_once('../app/database/query.php');
+	require_once('../app/models/value_sla.php');
 	require_once('../app/models/service.php');
 	require_once('../app/models/host_service.php');
 	require_once('../app/models/sla_status.php');
@@ -24,7 +25,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">Binary admin</a> 
+					<a class="navbar-brand" href="index.html">Zabbix Admin</a> 
 				</div>
 				<div style="color: white; padding: 15px 50px 5px 50px; float: right;font-size: 16px;"> 
 					Last access : 30 May 2014 &nbsp; 

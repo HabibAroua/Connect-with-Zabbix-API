@@ -48,6 +48,19 @@
 						);
 		}
 		
+		//getValue_Sla
+		public function getValue_Sla()
+		{
+			$res=output("select val from value_sla");
+            $i=0;
+			$val = 0;
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$val = $tab[0];
+			}
+			return $val;
+		}
+		
 	}
 
 ?>
