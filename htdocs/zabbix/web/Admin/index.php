@@ -4,6 +4,7 @@
 	require_once('../app/database/query.php');
 	require_once('../app/models/service.php');
 	require_once('../app/models/host_service.php');
+	require_once('../app/models/sla_status.php');
 	require_once('../app/controllers/serviceController.php');
 	$service = new Service();
 ?>

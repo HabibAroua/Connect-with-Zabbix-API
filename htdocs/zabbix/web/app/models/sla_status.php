@@ -38,5 +38,19 @@
 		{
 			$this->id_service=$id_service;
 		}
+		
+		public function add()
+		{
+			return input
+				(
+				 "insert into sla_status values
+					(
+						null,
+						'$this->$date_s',
+						$this->actual_sla,
+						$this->id_service
+					);"
+				);
+		}
 	}
 ?>
