@@ -60,7 +60,7 @@
 			
             while($tab=$res->fetch(PDO::FETCH_NUM))
             {
-				$T[$i]=$reservation = array('id'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",);
+				$T[$i]=$service = array('id'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",);
                 $i++;
 			}
 			return $T;

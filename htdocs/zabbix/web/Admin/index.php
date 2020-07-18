@@ -6,6 +6,7 @@
 	require_once('../app/models/host_service.php');
 	require_once('../app/models/sla_status.php');
 	require_once('../app/controllers/serviceController.php');
+	require_once('../app/controllers/sla_statusController.php');
 	$service = new Service();
 ?>
 <!DOCTYPE html>
@@ -103,6 +104,8 @@
 							case 'add_service' : require_once('../app/views/addService.php');
 							break;
 							case 'list_service' : require_once('../app/views/List_service.php');
+							break;
+							case 'add_status_sla' : require_once('../app/views/add_status_sla.php');
 							break;
 						}
 					}
