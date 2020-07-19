@@ -65,7 +65,8 @@
 						from sla_status , host_service
 						WHERE sla_status.id_service = host_service.id
 						and
-						sla_status.date_s = CURRENT_DATE()"
+						sla_status.date_s = CURRENT_DATE()
+						Order By host_service.host_name"
 					);
 			$i = 0;
 			$status_of_the_infrastructure='';
