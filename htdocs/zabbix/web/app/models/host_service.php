@@ -65,7 +65,7 @@
                 $i++;
 			}
 			return $T;
-	}
+		}
 		
 		//To_String()
 		public function toString()
