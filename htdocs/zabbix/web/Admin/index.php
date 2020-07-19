@@ -57,7 +57,7 @@
 							<a  href="?page=sla_today"><i class="fa fa-qrcode fa-3x"></i> Actaul SLA</a>
 						</li>
 						<li>
-							<a  href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
+							<a  href="?page=chart"><i class="fa fa-bar-chart-o fa-3x"></i>Charts</a>
 						</li>	
 						<li>
 							<a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
