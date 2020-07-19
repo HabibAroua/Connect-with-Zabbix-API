@@ -56,7 +56,7 @@
 		public function getAllService()
         {
 			$T= array();
-			$res=output("select * from host_service");
+			$res=output("select * from host_service Order By host_name");
             $i=0;
 			
             while($tab=$res->fetch(PDO::FETCH_NUM))
