@@ -4,28 +4,66 @@
 	{
 		public function add($sla_status)
 		{
-			$test = $sla_status->add();
-			if($test)
+			
+			
+			if($sla_status->getNb() == 0)
 			{
-				echo "<script>
-						Swal.fire
-						(
-							'success',
-							'Insertion successfully completed',
-							'success'
-						)
-					  </script>";
+				echo "add";
+				$test = $sla_status->add();
+				if($test)
+				{
+					echo "<script>
+							Swal.fire
+							(
+								'success',
+								'Insertion successfully completed',
+								'success'
+							)
+						  </script>";
+				}
+				else
+				{
+					echo "<script>
+							Swal.fire
+							(
+								'error',
+								'<Exception>',
+								'error'
+							)
+						  </script>";
+				}
+				
 			}
 			else
 			{
-				echo "<script>
-						Swal.fire
-						(
-							'error',
-							'Exception',
-							'error'
-						)
-					  </script>";
+				if ($sla_status->getNb() >=1)
+				{
+					$test1 = $sla_status->update();
+					echo "test is ".$test1;
+					if($test1)
+					{
+						echo "<script>
+							Swal.fire
+							(
+								'success',
+								'Update done',
+								'success'
+							)
+						  </script>";
+					}
+					else
+					{
+						echo "<script>
+							Swal.fire
+							(
+								'error',
+								'Exception 1',
+								'error'
+							)
+						  </script>";
+					}
+					
+				}
 			}
 		}
 		

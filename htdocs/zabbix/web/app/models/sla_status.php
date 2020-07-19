@@ -59,6 +59,7 @@
 		{
 			$value_sla = new value_sla();
 			echo 'the value is '.$value_sla->getValue_Sla();
+			$T= array();
 			$res = output
 					(
 						"select sla_status.date_s, host_service.host_name , host_service.ip_address , sla_status.actual_sla
@@ -86,6 +87,42 @@
                 $i++;
 			}
 			return $T;
+		}
+		
+		public function getNb()
+		{
+			$res=output
+						(
+						"
+							select sla_status.date_s, host_service.host_name , host_service.ip_address , sla_status.actual_sla
+							from sla_status , host_service
+							WHERE sla_status.id_service = host_service.id
+							and
+							sla_status.date_s = CURRENT_DATE() and host_service.id = $this->id_service
+						"
+						);
+            $i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+                $i++;
+			}
+			return $i;
+		}
+		
+		//update
+		public function update()
+		{
+			try
+			{
+				input("UPDATE sla_status SET actual_sla= $this->actual_sla where id_service=$this->id_service and date_s=CURRENT_DATE()");
+				return true;
+			}
+			catch (Exception $e)
+			{
+				return false;
+			}
+			
 		}
 		
 		//toString

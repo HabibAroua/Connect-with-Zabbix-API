@@ -113,6 +113,8 @@
 							break;
 							case 'sla_today' : require_once('../app/views/sla_today.php');
 							break;
+							case 'chart' : require_once('../app/views/chart.php');
+							break;
 						}
 					}
 				?>

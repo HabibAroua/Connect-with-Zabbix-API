@@ -55,6 +55,7 @@
 		
 		public function getAllService()
         {
+			$T= array();
 			$res=output("select * from host_service");
             $i=0;
 			
