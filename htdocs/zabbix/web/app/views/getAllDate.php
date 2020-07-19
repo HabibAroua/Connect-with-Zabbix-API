@@ -12,10 +12,41 @@
                         <div class="row">
 							<?php
 								if(isset($_GET['date']))
-								{
+								{   
 							?>
 							<div class="col-md-6">
-                                Tableau
+                                <table  class="table table-striped table-hover" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Service</th>
+                                            <th>Ip Address</th>
+                                    		<th>Actual SLA</th>
+                                            <th>Status of the infrastructure</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            $s = new sla_statusController();
+                                            $T = $s->sla_by_date($_GET['date']);
+                                            foreach ($T as $v)
+                                            {
+                                                $date_s = $v{'date_s'};
+                                                $host_name = $v{'host_name'};
+                                                $ip_address= $v{'ip_address'};
+                                    			$actual_sla = $v{'actual_sla'};
+                                                $status_of_the_infrastructure = $v{'status_of_the_infrastructure'};
+                                                echo "<tr>";
+                                                    echo "<td>$date_s</td>";
+                                                    echo "<td>$host_name</td>";
+                                                    echo "<td>$ip_address</td>";
+                                    				echo "<td>$actual_sla</td>";
+                                                    echo "<td>$status_of_the_infrastructure</td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
 							</div>
                             <div class="col-md-6">
 								<center>
@@ -28,7 +59,7 @@
 								</div>
 							</div>
 						</div>
-						<script src="assets/js/jquery-1.10.2.js"></script>
+                        <script src="assets/js/jquery-1.10.2.js"></script>
 						<!-- BOOTSTRAP SCRIPTS -->
 						<script src="assets/js/bootstrap.min.js"></script>
 						<!-- METISMENU SCRIPTS -->
@@ -37,11 +68,11 @@
 						<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
 						<script src="assets/js/morris/morris.js"></script>
 						<!-- CUSTOM SCRIPTS -->
-						<script src="assets/js/custom.js"></script>
-						<?php
+						<script src="assets/js/custom.js"></script>	
+                        <?php
 							$sla_statusController = new sla_statusController();
-							$sla_statusController->getChart();
-						?>	
+							$sla_statusController->chart_by_date($_GET['date']);
+						?>
 					</div>
 				</div>
 			</div>

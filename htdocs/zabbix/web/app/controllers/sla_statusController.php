@@ -67,17 +67,23 @@
 			}
 		}
 		
+		public function sla_by_date($d)
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getResultByDate($d);
+		}
+		
 		public function sla_Today()
 		{
 			$sla_status = new sla_status();
-			return $sla_status->getResultByDate();
+			return $sla_status->getResultByDateToday();
 		}
 		
 		public function getChart()
 		{
 			$list = "";
 			$sla_status = new sla_status();
-			$T = $sla_status->getResultByDate();
+			$T = $sla_status->getResultByDateToday();
 			foreach ($T as $v)
 			{
 				$actual_sla = $v{'actual_sla'};
@@ -87,9 +93,59 @@
 					$val = $val + $actual_sla;
 				}
 				
+				$value_sla = new value_sla();
+				$value = $value_sla->getValue_Sla();
+				
 				$host_name = $v{'host_name'};
-				$list =  $list ."{ host: '$host_name', SLA: '99.700', Actual_sla: '$val' },";
-				echo "<br> $list";
+				$list =  $list ."{ host: '$host_name', SLA: $value, Actual_sla: '$val' },";
+			}
+			$data ="data:
+						[
+							$list
+						],";
+			echo
+			"<script>
+				new Morris.Line
+				(
+					{
+						// ID of the element in which to draw the chart.
+						element: 'pushups',
+						// Chart data records -- each entry in this array corresponds to a point on
+						// the chart.
+						$data
+						// The name of the data record attribute that contains x-values.
+						xkey: 'host',
+						parseTime: false,
+						// A list of names of data record attributes that contain y-values.
+						ykeys: ['SLA','Actual_sla'],
+						// Labels for the ykeys -- will be displayed when you hover over the
+						// chart.
+						labels: ['SLA','Actual_sla'],
+						lineColors: ['#373651','#E65A26']
+					}
+				);
+			</script>";
+		}
+		
+		public function chart_by_date($d)
+		{
+			$list = "";
+			$sla_status = new sla_status();
+			$T = $sla_status->getResultByDate($d);
+			foreach ($T as $v)
+			{
+				$actual_sla = $v{'actual_sla'};
+				$val=0;
+				if (is_numeric($actual_sla))
+				{
+					$val = $val + $actual_sla;
+				}
+				
+				$value_sla = new value_sla();
+				$value = $value_sla->getValue_Sla();
+				
+				$host_name = $v{'host_name'};
+				$list =  $list ."{ host: '$host_name', SLA: '$value', Actual_sla: '$val' },";
 			}
 			$data ="data:
 						[
@@ -122,7 +178,13 @@
 		public function getAllDate()
 		{
 			$sla_status = new sla_status();
-			return $sla_status->getAllDate()  ;
+			return $sla_status->getAllDate();
+		}
+		
+		public function getResultByDate($d)
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getResultByDate($d);
 		}
 	}
 ?>
