@@ -1,7 +1,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Free Bootstrap Admin Template : Binary Admin</title>
+	<title>Zabbix Admin</title>
 	<!-- BOOTSTRAP STYLES-->
 	<link href="assets/css/bootstrap.css" rel="stylesheet" />
 	<!-- FONTAWESOME STYLES-->
