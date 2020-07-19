@@ -1,8 +1,17 @@
+<?php
+	if(isset($_POST['bt_login']))
+	{
+		require_once('../app/Controllers/session.php');
+		require_once("../app/controllers/AdminController.php");
+		$a =new AdminController();
+		$a->login($_POST['email'],$_POST['password']);
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Zabbix Admin Login</title>
-	<meta charset="UTF-8">
+	<!<meta charset="ANSI">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="picture/zabbix_logo.png" />
@@ -32,25 +41,25 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form">
+				<form method="POST" action="" class="login100-form validate-form">
 					<span class="login100-form-title p-b-33">
 						Account Zabbix Admin
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "Login is required">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
+						<button name="bt_login" class="login100-form-btn">
 							Sign in
 						</button>
 					</div>
@@ -97,8 +106,7 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-<?php
-	
-?>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 </body>
 </html>

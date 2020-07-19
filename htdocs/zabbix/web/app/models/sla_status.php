@@ -70,17 +70,20 @@
 					);
 			$i = 0;
 			$status_of_the_infrastructure='';
+			
 			while($tab=$res->fetch(PDO::FETCH_NUM))
             {
-				if ($tab[3]>=$value_sla->getValue_Sla())
+				$x = $value_sla->getValue_Sla() - $tab[3];
+				echo $x.' = '.$value_sla->getValue_Sla().'-'.$tab[3];
+				if ($x >=0)
 				{
-					$status_of_the_infrastructure='Up';
+					$status_of_the_infrastructure='Down';
 				}
 				else
 				{
-					if($tab[3]<$value_sla->getValue_Sla())
+					if($x<0)
 					{
-						$status_of_the_infrastructure='Down';
+						$status_of_the_infrastructure='Up';
 					}
 				}
 				$T[$i]=$result = array('date_s'=>$tab[0]."",'host_name'=>$tab[1]."",'ip_address'=>$tab[2]."",'actual_sla'=>$tab[3]."",'status_of_the_infrastructure'=>$status_of_the_infrastructure,);

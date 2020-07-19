@@ -1,5 +1,6 @@
 <?php
 
+	require_once('../app/controllers/session.php');
 	require_once('../app/database/connection.php');
 	require_once('../app/database/query.php');
 	require_once('../app/models/value_sla.php');
@@ -9,6 +10,8 @@
 	require_once('../app/controllers/serviceController.php');
 	require_once('../app/controllers/sla_statusController.php');
 	$service = new Service();
+	//$session = new Session();
+	//$session ->afterConnection();
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +32,7 @@
 				</div>
 				<div style="color: white; padding: 15px 50px 5px 50px; float: right;font-size: 16px;"> 
 					Last access : 30 May 2014 &nbsp; 
-					<a href="#" class="btn btn-danger square-btn-adjust">
+					<a href="logout.php" class="btn btn-danger square-btn-adjust">
 						Logout
 					</a> 
 				</div>
