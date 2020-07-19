@@ -124,6 +124,20 @@
 			
 		}
 		
+		//getAllDate
+		public function getAllDate()
+		{
+			$T= array();
+			$res=output("select DISTINCT date_s from sla_status");
+            $i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i]=$service = array('date_s'=>$tab[0]."",);
+                $i++;
+			}
+			return $T;
+		}
 		//toString
 		public function toString()
 		{

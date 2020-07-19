@@ -118,5 +118,11 @@
 				);
 			</script>";
 		}
+		
+		public function getAllDate()
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getAllDate()  ;
+		}
 	}
 ?>

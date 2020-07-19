@@ -58,7 +58,10 @@
 						</li>
 						<li>
 							<a  href="?page=chart"><i class="fa fa-bar-chart-o fa-3x"></i>Charts</a>
-						</li>	
+						</li>
+						<li>
+							<a  href="?page=getAllDate"><i class="fa fa-dashboard fa-3x"></i>Historic</a>
+						</li>
 						<li>
 							<a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
 						</li>				                
@@ -114,6 +117,8 @@
 							case 'sla_today' : require_once('../app/views/sla_today.php');
 							break;
 							case 'chart' : require_once('../app/views/chart.php');
+							break;
+							case 'getAllDate' : require_once ('../app/views/getAllDate.php');
 							break;
 						}
 					}
