@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <center>
-                <h2>All services</h2>
+                <h2>Sla analytics</h2>
             </center>
         </div>
 		<div class="row">
@@ -22,27 +22,7 @@
     <script src="assets/js/morris/morris.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-	<script>
-	new Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'pushups',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { day: 'Ariana', pushups: 99.700, beers: 88 },
-    { day: 'Monastir', pushups: 99.700, beers: 56},
-    { day: 'Wednesday', pushups: 99.700, beers: 99.800 },
-    { day: 'Thursday', pushups: 99.700, beers: 4 },
-    { day: 'Friday', pushups: 99.700, beers: 1 }
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'day',
-  parseTime: false,
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['pushups','beers'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Pushups','Beers'],
-  lineColors: ['#373651','#E65A26']
-});
-	</script>
+	<?php
+    $sla_statusController = new sla_statusController();
+    $sla_statusController->getChart();
+  ?>

@@ -72,5 +72,51 @@
 			$sla_status = new sla_status();
 			return $sla_status->getResultByDate();
 		}
+		
+		public function getChart()
+		{
+			$list = "";
+			$sla_status = new sla_status();
+			$T = $sla_status->getResultByDate();
+			foreach ($T as $v)
+			{
+				$actual_sla = $v{'actual_sla'};
+				$val=0;
+				if (is_numeric($actual_sla))
+				{
+					$val = $val + $actual_sla;
+				}
+				
+				$host_name = $v{'host_name'};
+				$list =  $list ."{ host: '$host_name', SLA: '99.700', Actual_sla: '$val' },";
+				echo "<br> $list";
+			}
+			$data ="data:
+						[
+							$list
+						],";
+			echo
+			"<script>
+				new Morris.Line
+				(
+					{
+						// ID of the element in which to draw the chart.
+						element: 'pushups',
+						// Chart data records -- each entry in this array corresponds to a point on
+						// the chart.
+						$data
+						// The name of the data record attribute that contains x-values.
+						xkey: 'host',
+						parseTime: false,
+						// A list of names of data record attributes that contain y-values.
+						ykeys: ['SLA','Actual_sla'],
+						// Labels for the ykeys -- will be displayed when you hover over the
+						// chart.
+						labels: ['SLA','Actual_sla'],
+						lineColors: ['#373651','#E65A26']
+					}
+				);
+			</script>";
+		}
 	}
 ?>

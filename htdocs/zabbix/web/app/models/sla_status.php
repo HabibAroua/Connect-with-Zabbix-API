@@ -58,7 +58,6 @@
 		public function getResultByDate()
 		{
 			$value_sla = new value_sla();
-			echo 'the value is '.$value_sla->getValue_Sla();
 			$T= array();
 			$res = output
 					(
