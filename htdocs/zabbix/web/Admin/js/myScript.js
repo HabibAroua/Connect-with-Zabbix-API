@@ -23,6 +23,7 @@ function will_delete_service(id)
 					'Your file has been deleted. '+id,
 					'success'
 				);
+				document.location.href='index.php?page=list_service&id='+id;
 			}
 		}
 	);
