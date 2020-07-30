@@ -10,8 +10,8 @@
 	require_once('../app/controllers/serviceController.php');
 	require_once('../app/controllers/sla_statusController.php');
 	$service = new Service();
-	//$session = new Session();
-	//$session ->afterConnection();
+	$session = new Session();
+	$session ->afterConnection();
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

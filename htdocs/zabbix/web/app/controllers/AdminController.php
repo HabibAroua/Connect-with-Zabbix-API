@@ -11,9 +11,9 @@
 		public function login($email,$password)
 		{
 			
-			if(($email = 'admin@zabbix.xom') && ($password == 'admin'))
+			if(($email = 'admin@zabbix.com') && ($password == 'admin'))
 			{	
-				$this->session->connect($email,$password,'http://localhost/zabbix/web/Admin/index.php',3600*48);
+				$this->session->connect($email,$password,'/index.php',3600*48);
 			}
 			else
 			{
