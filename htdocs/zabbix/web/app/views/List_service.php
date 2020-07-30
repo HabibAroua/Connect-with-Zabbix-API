@@ -33,8 +33,8 @@
                                                 echo "<td>$host_name</td>";
                                                 echo "<td>$id</td>";
                                                 echo "<td>$ip_address</td>";
-                                                echo "<td><a>Update</a></td>";
-                                                echo "<td><a>Delete</a></td>";
+                                                echo "<td><button class='glyphicon glyphicon-pencil'></button></td>";
+                                                echo "<td><button class='glyphicon glyphicon-trash'></button></td>";
                                             echo "</tr>";
                                         }
                                     ?>
