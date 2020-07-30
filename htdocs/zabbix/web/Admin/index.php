@@ -45,7 +45,7 @@
 							<img src="assets/img/find_user.png" class="user-image img-responsive"/>
 						</li>					
 						<li>
-							<a  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+							<a  href="#"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
 						</li>
 						<li>
 							<a  href="?page=list_service"><i class="fa fa-desktop fa-3x"></i> All Services</a>
