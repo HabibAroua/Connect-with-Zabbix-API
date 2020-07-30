@@ -1,3 +1,4 @@
+<script src="js/myScript.js"></script>
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">
@@ -34,7 +35,7 @@
                                                 echo "<td>$id</td>";
                                                 echo "<td>$ip_address</td>";
                                                 echo "<td><button class='glyphicon glyphicon-pencil'></button></td>";
-                                                echo "<td><button class='glyphicon glyphicon-trash'></button></td>";
+                                                echo "<td><button onClick='will_delete_service($id)' class='glyphicon glyphicon-trash'></button></td>";
                                             echo "</tr>";
                                         }
                                     ?>
@@ -47,7 +48,6 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 <script>
     $("#example").dataTable();
