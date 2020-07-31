@@ -4,7 +4,7 @@
 		$action = $_GET['action'];
 		switch($action)
 		{
-			case 'delete_service' : echo "delete a service by Habib Aroua";
+			case 'delete_service' :  echo "delete a service by Habib Aroua ".$_POST['name'];
 			break;
 		}
 	}

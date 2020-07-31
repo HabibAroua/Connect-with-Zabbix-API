@@ -23,13 +23,13 @@ function will_delete_service(id)
 					'Your file has been deleted. '+id,
 					'success'
 				);
-				var my_id = id;
+				var name = 'Souha Ben Amor';
 				$.ajax
 				(
 					{
-						type: 'GET',
+						type: 'POST',
 						url: "/zabbix/web/app/controllers/action.php?action=delete_service",
-						
+						data: {'name': name},
 						success: 
 						function(result)
 						{
