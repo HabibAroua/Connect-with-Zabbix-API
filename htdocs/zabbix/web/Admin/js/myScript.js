@@ -25,6 +25,15 @@ function will_delete_service(id)
 				);
 				document.location.href='index.php?page=list_service&id='+id;
 			}
+			else
+			{
+				Swal.fire
+				(
+					'Deleted!',
+					"You cannot delete this service",
+					'error'
+				);
+			}
 		}
 	);
 }            
