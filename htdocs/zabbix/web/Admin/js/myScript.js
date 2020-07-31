@@ -23,13 +23,26 @@ function will_delete_service(id)
 					'Your file has been deleted. '+id,
 					'success'
 				);
-				document.location.href='index.php?page=list_service&id='+id;
+				var my_id = id;
+				$.ajax
+				(
+					{
+						type: 'GET',
+						url: "/zabbix/web/app/controllers/action.php?action=delete_service",
+						
+						success: 
+						function(result)
+						{
+							alert(result);
+						}
+					}
+				);
 			}
 			else
 			{
 				Swal.fire
 				(
-					'Deleted!',
+					'Canceled!',
 					"You cannot delete this service",
 					'error'
 				);

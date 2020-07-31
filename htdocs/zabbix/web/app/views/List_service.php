@@ -52,3 +52,9 @@
 <script>
     $("#example").dataTable();
 </script>
+<?php
+    if(isset($_GET['id']))
+    {
+        echo "<script>alert('Hello');</script>";
+    }
+?>
