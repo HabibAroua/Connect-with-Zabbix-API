@@ -36,6 +36,13 @@ function will_delete_service(id)
 									'success'
 								);
 								location.reload();
+								/*
+								 setTimeout(
+									function() 
+									{
+									   location.reload();
+									}, 0001); 
+								 */
 							}
 							else
 							{
