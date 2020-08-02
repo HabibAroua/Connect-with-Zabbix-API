@@ -58,7 +58,6 @@
             $sla_status->setId_service($_POST['id_service']);
             $sla_status->setDate_s($_POST['date_s']);
             $sla_status->setActual_sla($_POST['actual_sla']);
-            //echo $sla_status->toString();
             $sla_statusController = new sla_statusController();
             $sla_statusController->add($sla_status);
         }

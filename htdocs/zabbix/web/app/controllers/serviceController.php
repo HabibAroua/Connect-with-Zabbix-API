@@ -39,5 +39,12 @@
 			$s = new Host_Service();
 			return $s->delete($id);
 		}
+		
+		public function findById($id)
+		{
+			$s = new Host_Service();
+			$s->findById($id);
+			return $s;
+		}
 	}
 ?>

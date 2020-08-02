@@ -72,6 +72,19 @@
 			return input("DELETE FROM host_service WHERE id = '$id' ");
 		}
 		
+		public function findById($id)
+		{
+			$res=output("select * from host_service where id = $id");
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+                $this->id = $tab['0'];
+				$this->host_name = $tab['1'];
+				$this->ip_address = $tab['2'];
+				//$i++;
+			}
+		}
+		
 		//To_String()
 		public function toString()
 		{

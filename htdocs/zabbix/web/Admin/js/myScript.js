@@ -64,4 +64,14 @@ function will_delete_service(id)
 			}
 		}
 	);
-}            
+}
+
+function findById(id)
+{
+	document.location.href = '/zabbix/web/Admin/index.php?page=list_service&id='+id;
+}
+
+function update()
+{
+	
+}
