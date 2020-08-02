@@ -67,6 +67,11 @@
 			return $T;
 		}
 		
+		public function delete($id)
+		{
+			return input("DELETE FROM host_service WHERE id = '$id' ");
+		}
+		
 		//To_String()
 		public function toString()
 		{

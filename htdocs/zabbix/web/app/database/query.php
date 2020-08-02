@@ -1,5 +1,6 @@
 <?php
 
+
 	function input($req)
     {
         global $connection;

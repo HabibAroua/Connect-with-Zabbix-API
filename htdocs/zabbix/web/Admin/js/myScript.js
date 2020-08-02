@@ -17,23 +17,38 @@ function will_delete_service(id)
 		{
 			if (result.value)
 			{
-				Swal.fire
-				(
-					'Deleted!',
-					'Your file has been deleted. '+id,
-					'success'
-				);
-				var name = 'Souha Ben Amor';
+				var my_id = id;
 				$.ajax
 				(
 					{
 						type: 'POST',
 						url: "/zabbix/web/app/controllers/action.php?action=delete_service",
-						data: {'name': name},
+						data: {'id': my_id},
 						success: 
 						function(result)
 						{
-							alert(result);
+							if (result == 'good')
+							{
+								Swal.fire
+								(
+									'Deleted!',
+									'This service has been deleted. ',
+									'success'
+								);
+								location.reload();
+							}
+							else
+							{
+								if(result == 'bad')
+								{
+									Swal.fire
+									(
+										'Error',
+										'You cannot delete this service ',
+										'error'
+									);
+								}
+							}
 						}
 					}
 				);

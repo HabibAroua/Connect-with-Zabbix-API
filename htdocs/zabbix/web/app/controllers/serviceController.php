@@ -33,5 +33,11 @@
 			$s = new Host_Service();
 			return ($s->getAllService());
 		}
+		
+		public function delete($id)
+		{
+			$s = new Host_Service();
+			return $s->delete($id);
+		}
 	}
 ?>
