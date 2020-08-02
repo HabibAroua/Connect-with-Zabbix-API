@@ -1,4 +1,5 @@
 <?php
+    echo "<script src='js/myScript.js'></script>";
     if(isset($_GET['id']))
     {
         $serviceController =new serviceController();
@@ -7,7 +8,7 @@
     }
     else
     {
-        echo "<script src='js/myScript.js'></script>
+        echo "
             <div id='page-inner'>
                 <div class='row'>
                     <div class='col-md-12'>

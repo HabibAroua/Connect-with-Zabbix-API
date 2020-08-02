@@ -23,7 +23,7 @@
                                     <input name="ip_address" id="ip_address" class="form-control" value="<?php echo $s->getIp_address(); ?>" placeholder="PLease Enter the Ip Address" required/>
                                 </div>
                                 <center>
-                                    <button name="bt_add_service"  class="btn btn-primary">Update</button>
+                                    <button name="bt_update_service" onclick="update()"  class="btn btn-primary">Update</button>
                                     <button type="button" class="btn btn-primary">Reset</button>
                                 </center>
 							</div>

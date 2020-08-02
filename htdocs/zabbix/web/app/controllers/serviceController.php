@@ -46,5 +46,10 @@
 			$s->findById($id);
 			return $s;
 		}
+		
+		public function update($id,$s)
+		{			
+			return $s->update($id);
+		}
 	}
 ?>

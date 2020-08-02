@@ -85,6 +85,21 @@
 			}
 		}
 		
+		//update
+		public function update($id)
+		{
+			$my_host_name=$this->host_name;
+			$myip_address=$this->ip_address;
+			return input
+				(
+				 "
+				UPDATE host_service SET
+					host_name='$my_host_name',
+					ip_address='$myip_address'
+				WHERE id=$id"
+				);
+		}
+		
 		//To_String()
 		public function toString()
 		{

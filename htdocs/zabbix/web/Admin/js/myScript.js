@@ -35,14 +35,11 @@ function will_delete_service(id)
 									'This service has been deleted. ',
 									'success'
 								);
-								location.reload();
-								/*
 								 setTimeout(
 									function() 
 									{
 									   location.reload();
-									}, 0001); 
-								 */
+									}, 500); 
 							}
 							else
 							{
@@ -80,5 +77,49 @@ function findById(id)
 
 function update()
 {
-	
+	var id = $('#id').val();
+	var host_name = $('#host_name').val();
+	var ip_address = $('#ip_address').val();
+	$.ajax
+	(
+		{
+			type: 'POST',
+			url: "/zabbix/web/app/controllers/action.php?action=update_service",
+			data: {'id': id , 'host_name' : host_name , 'ip_address' : ip_address},
+			success: 
+			function(result)
+			{
+				alert(result);
+				if (result == 'good')
+				{
+					Swal.fire
+					(
+						'Updated!',
+						'This service has been updated. ',
+						'success'
+					);
+					setTimeout(
+							function() 
+							{
+								 location.reload();
+								 document.location.href = '/zabbix/web/Admin/index.php?page=list_service';
+							},
+							500);
+					
+				}
+				else
+				{
+					if(result == 'bad')
+					{
+						Swal.fire
+						(
+							'Error!',
+							'You cannot update this service. ',
+							'error'
+						);
+					}
+				}
+			}
+		}
+	);
 }
