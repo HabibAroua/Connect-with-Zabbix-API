@@ -82,14 +82,32 @@
             if (($h = fopen($tmp_file, "r")) !== FALSE) 
             {
                 // Convert each line into the local $data variable
+                $sla_status =new sla_status();
+                
+                //echo $sla_status->toString();
+                $sla_statusController = new sla_statusController();
+                
+                $i=0;
                 while (($data = fgetcsv($h, 1000, ":")) !== FALSE) 
-                {		
-                  // Read the data from a single line
-                  echo ($data[1].'<br>');
+                {
+                    $sla_status->setId_service($data[0]);
+                    $sla_status->setDate_s($data[1]);
+                    $sla_status->setActual_sla($data[2]);
+                    // Read the data from a single line
+                    $sla_statusController->add_direct($sla_status);
+                    $i++;
                 }
                 
                 // Close the file
                 fclose($h);
+                echo "<script>
+							Swal.fire
+							(
+								'success',
+								'Insertion of $i elements are successfully completed',
+								'success'
+							)
+						</script>";
             }
         }
         else
