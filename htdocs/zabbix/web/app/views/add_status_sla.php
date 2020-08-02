@@ -9,7 +9,7 @@
 					<div class="panel-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <form action="" method="POST">
+                                <form action="" method="POST" enctype="multipart/form-data">
 									<div class="form-group">
 										<label for="service">Service</label>
 										<select name="id_service" id="service" class="form-control" name="id_service">
@@ -31,8 +31,9 @@
                                     </div>
 									<div class="form-group">
 										<label for="sla">SLA</label>
-										<input name="actual_sla" id="sla" type= 'text' class="form-control" required/>
+										<input name="actual_sla" id="sla" type= 'text' class="form-control" />
                                     </div>
+                                    <input name="file" placeholder="Image" class="form-control" type="File" id="file"/>
 									<center>
                                         <button name="bt_add_status"  class="btn btn-primary">Add</button>
                                         <button type="button" class="btn btn-primary">Reset</button>
@@ -52,6 +53,7 @@
 <?php
 	if(isset($_POST['bt_add_status']))
 	{
+        /*
         if(date('Y-m-d') == $_POST['date_s'])
         {
             $sla_status =new sla_status();
@@ -71,5 +73,28 @@
             $sla_statusController = new sla_statusController();
             $sla_statusController->add_direct($sla_status);
         }
-	}
+        */
+        if(isset($_FILES['file']))
+        {
+            $name_file=$_FILES['file']['name'];
+            $tmp_file=$_FILES['file']['tmp_name'];
+            
+            if (($h = fopen($tmp_file, "r")) !== FALSE) 
+            {
+                // Convert each line into the local $data variable
+                while (($data = fgetcsv($h, 1000, ":")) !== FALSE) 
+                {		
+                  // Read the data from a single line
+                  echo ($data[1].'<br>');
+                }
+                
+                // Close the file
+                fclose($h);
+            }
+        }
+        else
+        {
+            echo "error";
+        }
+    }
 ?>
