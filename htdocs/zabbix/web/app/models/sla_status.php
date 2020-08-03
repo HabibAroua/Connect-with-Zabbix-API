@@ -249,4 +249,7 @@
 			return $this->id_service.' '.$this->date_s.' '.$this->actual_sla;
 		}
 	}
+	
+	//select sla_status.date_s - INTERVAL 1 DAY from sla_status
+
 ?>

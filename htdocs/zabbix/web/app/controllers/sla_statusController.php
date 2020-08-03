@@ -272,8 +272,45 @@
 		
 		public function getSLAServiceByYearChart($id)
 		{
+			$list = "";
 			$sla_status = new sla_status();
 			$T = $sla_status->getSLAServiceByYear($id);
+			foreach ($T as $v)
+			{
+				$avg = $v{'avg'};
+				$year = $v{'year'};
+				
+				$value_sla = new value_sla();
+				$value = $value_sla->getValue_Sla();
+				
+				$list =  $list ."{ Year: '$year', SLA: $value, Actual_sla: '$avg' },";
+			}
+			$data ="data:
+						[
+							$list
+						],";
+			echo
+			"<script>
+				new Morris.Line
+				(
+					{
+						// ID of the element in which to draw the chart.
+						element: 'pushups',
+						// Chart data records -- each entry in this array corresponds to a point on
+						// the chart.
+						$data
+						// The name of the data record attribute that contains x-values.
+						xkey: 'Year',
+						parseTime: false,
+						// A list of names of data record attributes that contain y-values.
+						ykeys: ['SLA','Actual_sla'],
+						// Labels for the ykeys -- will be displayed when you hover over the
+						// chart.
+						labels: ['SLA','Actual_sla'],
+						lineColors: ['#373651','#E65A26']
+					}
+				);
+			</script>";
 		}
 	}
 ?>

@@ -58,7 +58,7 @@
     <script src="assets/js/custom.js"></script>
 	<?php
     $sla_statusController = new sla_statusController();
-    $sla_statusController->getAllSlaByService($_GET['id']);
+    $sla_statusController->getSLAServiceByYearChart($_GET['id']);
   ?>
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 <script>
