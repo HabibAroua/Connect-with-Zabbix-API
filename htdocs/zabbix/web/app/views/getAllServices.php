@@ -1,7 +1,17 @@
 <?php
-	if(isset($_GET['id']))
+	if((isset($_GET['id'])) && (isset($_GET['search'])))
 	{
-		require_once('../app/views/chart_service.php');
+		if($_GET['search'] == 'dates')
+		{
+			require_once('../app/views/chart_service.php');
+		}
+		else
+		{
+			if($_GET['search'] == 'years')
+			{
+				echo "Hello";
+			}
+		}
 	}
 	else
 	{

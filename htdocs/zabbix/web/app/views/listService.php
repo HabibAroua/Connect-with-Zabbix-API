@@ -14,7 +14,8 @@
 								<thead>
 									<tr>
 										<th>Service</th>
-										<th>Detail</th>
+										<th>Consult by Dates</th>
+                                        <th>Consult by years</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -27,7 +28,8 @@
 											$id=$v{'id'};
 											echo "<tr>";
 												echo "<td>$host_name</td>";
-												echo "<td><a href='?page=getAllServices&id=$id'>Consult</a></td>";
+												echo "<td><a href='?page=getAllServices&search=dates&id=$id'>Consult</a></td>";
+                                                echo "<td><a href='?page=getAllServices&search=years&id=$id'>Consult</a></td>";
 											echo "</tr>";
 										}
 									?>

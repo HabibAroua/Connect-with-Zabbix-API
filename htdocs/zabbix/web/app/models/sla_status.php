@@ -220,6 +220,28 @@
 			return $T;
 		}
 		
+		public function getSLAServiceByYear($id)
+		{
+			$T = array();
+			$res = output
+						(
+							"
+								select YEAR(sla_status.date_s) , avg(sla_status.actual_sla)
+								from sla_status, host_service
+								WHERE host_service.id = sla_status.id_service
+								and
+								host_service.id = 9 GROUP by YEAR(sla_status.date_s)
+							"
+						);
+			$i = 0; 
+			while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i] = $result = array('year'=>$tab[0], 'avg'=>$tab[1],);
+				$i++;
+			}
+			return $T;
+		}
+		
 		//toString
 		public function toString()
 		{

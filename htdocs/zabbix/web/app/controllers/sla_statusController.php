@@ -264,5 +264,11 @@
 				);
 			</script>";
 		}
+		
+		public function getSlaServiceByDate($id)
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getAllSlaByService($id);
+		}
 	}
 ?>
