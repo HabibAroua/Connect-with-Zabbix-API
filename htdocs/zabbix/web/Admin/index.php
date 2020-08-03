@@ -63,7 +63,19 @@
 							<a  href="?page=chart"><i class="fa fa-bar-chart-o fa-3x"></i>Charts</a>
 						</li>
 						<li>
-							<a  href="?page=getAllDate"><i class="fa fa-dashboard fa-3x"></i>Historic</a>
+							<a href="#">
+								<i class="fa fa-sitemap fa-3x"></i> 
+								Historical
+								<span class="fa arrow"></span>
+							</a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a href="?page=getAllDate">Historical by Date</a>
+								</li>
+								<li>
+									<a href="#">Historical by Service</a>
+								</li>
+							</ul>
 						</li>
 						<li>
 							<a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
