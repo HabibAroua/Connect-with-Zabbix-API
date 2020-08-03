@@ -53,27 +53,6 @@
 <?php
 	if(isset($_POST['bt_add_status']))
 	{
-        /*
-        if(date('Y-m-d') == $_POST['date_s'])
-        {
-            $sla_status =new sla_status();
-            $sla_status->setId_service($_POST['id_service']);
-            $sla_status->setDate_s($_POST['date_s']);
-            $sla_status->setActual_sla($_POST['actual_sla']);
-            $sla_statusController = new sla_statusController();
-            $sla_statusController->add($sla_status);
-        }
-        else
-        {
-            $sla_status =new sla_status();
-            $sla_status->setId_service($_POST['id_service']);
-            $sla_status->setDate_s($_POST['date_s']);
-            $sla_status->setActual_sla($_POST['actual_sla']);
-            //echo $sla_status->toString();
-            $sla_statusController = new sla_statusController();
-            $sla_statusController->add_direct($sla_status);
-        }
-        */
         if(isset($_FILES['file']))
         {
             $name_file=$_FILES['file']['name'];
