@@ -73,7 +73,7 @@
 									<a href="?page=getAllDate">Historical by Date</a>
 								</li>
 								<li>
-									<a href="#">Historical by Service</a>
+									<a href="?page=getAllServices">Historical by Service</a>
 								</li>
 							</ul>
 						</li>
@@ -144,6 +144,8 @@
 							case 'chart' : require_once('../app/views/chart.php');
 							break;
 							case 'getAllDate' : require_once ('../app/views/getAllDate.php');
+							break;
+							case 'getAllServices' : require_once('../app/views/getAllServices.php');
 							break;
 						}
 					}

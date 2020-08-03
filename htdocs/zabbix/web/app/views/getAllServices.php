@@ -1,0 +1,10 @@
+<?php
+	if(isset($_GET['id']))
+	{
+		require_once('../app/views/chart_service.php');
+	}
+	else
+	{
+		require_once("../app/views/listService.php");		
+	}
+?>
