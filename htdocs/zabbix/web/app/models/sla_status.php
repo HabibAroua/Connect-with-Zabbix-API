@@ -190,12 +190,12 @@
 			$T = array();
 			$res = output
 					(
-					 "
-						select host_service.host_name, sla_status.date_s , sla_status.actual_sla
-						from sla_status, host_service 
-						WHERE host_service.id = sla_status.id_service and host_service.id = $idService
-						ORDER By sla_status.date_s
-					 "
+						"
+						   select host_service.host_name, sla_status.date_s , sla_status.actual_sla
+						   from sla_status, host_service 
+						   WHERE host_service.id = sla_status.id_service and host_service.id = $idService
+						   ORDER By sla_status.date_s
+						"
 					 );
 			$i=0;
 			
