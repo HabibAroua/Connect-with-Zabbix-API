@@ -9,7 +9,7 @@
 		{
 			if($_GET['search'] == 'years')
 			{
-				echo "Hello";
+				require_once('../app/views/getSlaByYear.php');
 			}
 		}
 	}

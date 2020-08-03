@@ -270,5 +270,17 @@
 			$sla_status = new sla_status();
 			return $sla_status->getAllSlaByService($id);
 		}
+		
+		public function getSLAServiceByYear($id)
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getSLAServiceByYear($id);
+		}
+		
+		public function getSLAServiceByYearChart($id)
+		{
+			$sla_status = new sla_status();
+			$T = $sla_status->getSLAServiceByYear($id);
+		}
 	}
 ?>
