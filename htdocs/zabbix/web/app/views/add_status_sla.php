@@ -10,29 +10,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <form action="" method="POST" enctype="multipart/form-data">
-									<div class="form-group">
-										<label for="service">Service</label>
-										<select name="id_service" id="service" class="form-control" name="id_service">
-											<?php
-												$s = new serviceController();
-												$T = $s->getAllService();
-												foreach ($T as $v)
-												{
-													$id_service = $v{'id'};
-													$host_name = $v{'host_name'};
-													echo "<option value='$id_service'>$host_name</option>";
-												}
-											?>
-                                        </select>
-									</div>
-									<div class="form-group">
-										<label for="date_s">Date</label>
-										<input name="date_s" id="date_s" type= date class="form-control" value="<?php echo date('Y-m-d') ?>" />
-                                    </div>
-									<div class="form-group">
-										<label for="sla">SLA</label>
-										<input name="actual_sla" id="sla" type= 'text' class="form-control" />
-                                    </div>
                                     <input name="file" placeholder="Image" class="form-control" type="File" id="file"/>
 									<center>
                                         <button name="bt_add_status"  class="btn btn-primary">Add</button>

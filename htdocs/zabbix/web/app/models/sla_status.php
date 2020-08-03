@@ -74,7 +74,6 @@
 			while($tab=$res->fetch(PDO::FETCH_NUM))
             {
 				$x = $value_sla->getValue_Sla() - $tab[3];
-				echo $x.' = '.$value_sla->getValue_Sla().'-'.$tab[3];
 				if ($x >=0)
 				{
 					$status_of_the_infrastructure='Down';
