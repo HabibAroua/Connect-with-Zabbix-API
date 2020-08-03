@@ -196,7 +196,7 @@
 						   WHERE host_service.id = sla_status.id_service and host_service.id = $idService
 						   ORDER By sla_status.date_s
 						"
-					 );
+					);
 			$i=0;
 			
             while($tab=$res->fetch(PDO::FETCH_NUM))
