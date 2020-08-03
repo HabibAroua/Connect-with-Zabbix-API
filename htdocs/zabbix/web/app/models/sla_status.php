@@ -230,7 +230,8 @@
 								from sla_status, host_service
 								WHERE host_service.id = sla_status.id_service
 								and
-								host_service.id = 9 GROUP by YEAR(sla_status.date_s)
+								host_service.id = $id
+								GROUP by YEAR(sla_status.date_s)
 							"
 						);
 			$i = 0; 
