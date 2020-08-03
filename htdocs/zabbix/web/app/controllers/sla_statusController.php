@@ -216,13 +216,6 @@
 		
 		public function getAllSlaByService($idService)
 		{
-			/*
-			$sla_status = new sla_status();
-			$T = $sla_status->getAllSlaByService($idService);
-			foreach ($T as $v)
-			{
-				echo $v{'date_s'}.'<br>';
-			}*/
 			$list = "";
 			$sla_status = new sla_status();
 			$T = $sla_status->getAllSlaByService($idService);
