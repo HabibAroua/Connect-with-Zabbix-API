@@ -154,7 +154,12 @@
 		{
 			try
 			{
-				input("UPDATE sla_status SET actual_sla= $this->actual_sla where id_service=$this->id_service and date_s=CURRENT_DATE()");
+				input
+					(
+						"UPDATE sla_status
+						SET actual_sla= $this->actual_sla
+						where id_service=$this->id_service and date_s=CURRENT_DATE()"
+					);
 				return true;
 			}
 			catch (Exception $e)
@@ -174,6 +179,29 @@
             while($tab=$res->fetch(PDO::FETCH_NUM))
             {
 				$T[$i]=$service = array('date_s'=>$tab[0]."",);
+                $i++;
+			}
+			return $T;
+		}
+		
+		//get All SLA by service
+		public function getAllSlaByService($idService)
+		{
+			$T = array();
+			$res = output
+					(
+					 "
+						select host_service.host_name, sla_status.date_s , sla_status.actual_sla
+						from sla_status, host_service 
+						WHERE host_service.id = sla_status.id_service and host_service.id = $idService
+						ORDER By sla_status.date_s
+					 "
+					 );
+			$i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i]=$service = array('host_name'=>$tab[0]."",'date_s'=>$tab[1]."",'sla_status'=>$tab[2]."",);
                 $i++;
 			}
 			return $T;

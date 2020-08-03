@@ -83,7 +83,7 @@
 							Swal.fire
 							(
 								'success',
-								'Insertion of $i elements are successfully completed',
+								'Insertion of $i elements are inserted successfully',
 								'success'
 							)
 						</script>";
