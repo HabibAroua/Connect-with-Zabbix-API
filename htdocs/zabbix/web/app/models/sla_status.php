@@ -132,13 +132,13 @@
 		{
 			$res=output
 						(
-						"
-							select sla_status.date_s, host_service.host_name , host_service.ip_address , sla_status.actual_sla
-							from sla_status , host_service
-							WHERE sla_status.id_service = host_service.id
-							and
-							sla_status.date_s = CURRENT_DATE() and host_service.id = $this->id_service
-						"
+							"
+								select sla_status.date_s, host_service.host_name , host_service.ip_address , sla_status.actual_sla
+								from sla_status , host_service
+								WHERE sla_status.id_service = host_service.id
+								and
+								sla_status.date_s = CURRENT_DATE() and host_service.id = $this->id_service
+							"
 						);
             $i=0;
 			
@@ -166,7 +166,6 @@
 			{
 				return false;
 			}
-			
 		}
 		
 		//getAllDate
@@ -179,6 +178,21 @@
             while($tab=$res->fetch(PDO::FETCH_NUM))
             {
 				$T[$i]=$service = array('date_s'=>$tab[0]."",);
+                $i++;
+			}
+			return $T;
+		}
+		
+		//get All years
+		public function getAllYears()
+		{
+			$T= array();
+			$res=output("select DISTINCT YEAR(sla_status.date_s) from sla_status");
+            $i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i]=$service = array('year'=>$tab[0]."",);
                 $i++;
 			}
 			return $T;
@@ -206,6 +220,7 @@
 			}
 			return $T;
 		}
+		
 		//toString
 		public function toString()
 		{
