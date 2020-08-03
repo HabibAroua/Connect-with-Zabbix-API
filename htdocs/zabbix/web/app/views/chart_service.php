@@ -1,11 +1,11 @@
 <?php
-	//echo $_GET['id'];
+	$serviceController = new serviceController();
 ?>
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">
             <center>
-                <h2>Sla analytics</h2>
+                <h2><?php echo $serviceController->findNameById($_GET['id']); ?></h2>
             </center>
         </div>
 		<div class="row">
@@ -27,5 +27,5 @@
     <script src="assets/js/custom.js"></script>
 	<?php
     $sla_statusController = new sla_statusController();
-    $sla_statusController->getChart();
+    $sla_statusController->getAllSlaByService($_GET['id']);
   ?>

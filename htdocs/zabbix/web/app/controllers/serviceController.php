@@ -51,5 +51,11 @@
 		{			
 			return $s->update($id);
 		}
+		
+		public function findNameById($id)
+		{
+			$s = new Host_Service();
+			return $s->findNameById($id);
+		}
 	}
 ?>

@@ -100,6 +100,17 @@
 				);
 		}
 		
+		public function findNameById($id)
+		{
+			$res=output("select host_name from host_service where id = $id");
+			$x = "";
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+                $x = $tab['0'];
+				//$i++;
+			}
+			return $x;
+		}
 		
 		//To_String()
 		public function toString()
