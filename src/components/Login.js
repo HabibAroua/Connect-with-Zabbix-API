@@ -8,7 +8,7 @@ class Login extends Component
     {
 		
 	    return axios
-            .post('http://localhost/zabbix/',
+            .post('http://127.0.0.1/zabbix/',
 			{
                 user : user.email,
                 password : user.password
@@ -16,7 +16,7 @@ class Login extends Component
 			
             .then(res =>
             {
-				//console.log(res.data);
+				alert(res.data);
 				if(res.data== "Error")
 				{
 					return null;
