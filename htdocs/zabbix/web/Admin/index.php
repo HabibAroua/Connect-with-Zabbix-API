@@ -54,7 +54,7 @@
 							<a href="index.php?page=add_service"><i class="fa fa-edit fa-3x"></i> Add Host </a>
 						</li>
 						<li>
-							<a href="index.php?page=add_status_sla"><i class="fa fa-edit fa-3x"></i> Change the sla value </a>
+							<a href="index.php?page=add_status_sla"><i class="fa fa-edit fa-3x"></i>Add sla status</a>
 						</li>
 						<li>
 							<a  href="?page=sla_today"><i class="fa fa-qrcode fa-3x"></i> Actaul SLA</a>
@@ -76,42 +76,7 @@
 									<a href="?page=getAllServices">Historical by Service</a>
 								</li>
 							</ul>
-						</li>
-						<li>
-							<a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
-						</li>				                
-						<li>
-							<a href="#">
-								<i class="fa fa-sitemap fa-3x"></i> 
-								Multi-Level Dropdown
-								<span class="fa arrow"></span>
-							</a>
-							<ul class="nav nav-second-level">
-								<li>
-									<a href="#">Second Level Link</a>
-								</li>
-								<li>
-									<a href="#">Second Level Link</a>
-								</li>
-								<li>
-									<a href="#">Second Level Link<span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li>
-											<a href="#">Third Level Link</a>
-										</li>
-										<li>
-											<a href="#">Third Level Link</a>
-										</li>
-										<li>
-											<a href="#">Third Level Link</a>
-										</li>
-									</ul>  
-								</li>
-							</ul>
-						</li>  
-						<li>
-							<a   href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-						</li>	
+						</li>			                	
 					</ul>
 				</div>
 			</nav>  

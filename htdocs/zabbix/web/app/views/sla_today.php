@@ -13,8 +13,8 @@
                             <table  class="table table-striped table-hover" id="example">
                                 <thead>
                                     <tr>
-                                        <th>Date</th>
                                         <th>Service</th>
+                                        <th>Date</th>
                                         <th>Ip Address</th>
 										<th>Actual SLA</th>
                                         <th>Status of the infrastructure</th>
@@ -26,14 +26,14 @@
                                         $T = $s->sla_Today();
                                         foreach ($T as $v)
                                         {
-                                            $date_s = $v{'date_s'};
                                             $host_name = $v{'host_name'};
+                                            $date_s = $v{'date_s'};
                                             $ip_address= $v{'ip_address'};
 											$actual_sla = $v{'actual_sla'};
                                             $status_of_the_infrastructure = $v{'status_of_the_infrastructure'};
                                             echo "<tr>";
-                                                echo "<td>$date_s</td>";
                                                 echo "<td>$host_name</td>";
+                                                echo "<td>$date_s</td>";
                                                 echo "<td>$ip_address</td>";
 												echo "<td>$actual_sla</td>";
                                                 echo "<td>$status_of_the_infrastructure</td>";

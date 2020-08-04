@@ -1,6 +1,5 @@
 <?php
 
-
 	class Host_Service
 	{
 		private $id;
@@ -107,7 +106,6 @@
             while($tab=$res->fetch(PDO::FETCH_NUM))
             {
                 $x = $tab['0'];
-				//$i++;
 			}
 			return $x;
 		}
