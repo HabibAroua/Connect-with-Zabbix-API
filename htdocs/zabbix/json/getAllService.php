@@ -7,6 +7,6 @@
 	require_once('../web/app/controllers/serviceController.php');
 	require_once('../security/security.php');
 	$s = new serviceController();
-	
+	//show
 	echo json_encode($s->getAllService());
 ?>
