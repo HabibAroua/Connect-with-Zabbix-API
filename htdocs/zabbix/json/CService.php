@@ -4,8 +4,42 @@
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
     header("Content-type:application/json");
+	
 	class CService
 	{
+		private $from;
+		private $to;
+		
+		public function __construct($from,$to)
+		{
+			$this->from=$from;
+			$this->to=$to;
+		}
+		
+		//from
+		public function getFrom()
+		{
+			return $this->from;
+		}
+		
+		public function setFrom($from)
+		{
+			$this->from=$from;
+		}
+		
+		
+		//to
+		public function getTo()
+		{
+			return $this->to;
+		}
+		
+		public function setTo($to)
+		{
+			$this->to=$this;
+		}
+		
+		//getAllSlaValue
 		public function getAllSla()
 		{
 			$postData = array
@@ -51,6 +85,7 @@
 			print_r($T[7]['sla'][0]['sla']);
 		}
 	}
-	$c = new CService();
+	// 'from' => 1596754800 , 'to' => 1596803142 --> Today
+	$c = new CService(1596754800,1596803142);
 	$c->getAllSla();
 ?>
