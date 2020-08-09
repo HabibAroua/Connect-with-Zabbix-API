@@ -136,7 +136,7 @@
 								from sla_status , host_service
 								WHERE sla_status.id_service = host_service.id
 								and
-								sla_status.date_s = CURRENT_DATE() and host_service.id = $this->id_service
+								sla_status.date_s = CURRENT_DATE()
 							"
 						);
             $i=0;

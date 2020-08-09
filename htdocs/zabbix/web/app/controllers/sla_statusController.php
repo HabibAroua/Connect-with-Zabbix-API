@@ -4,67 +4,8 @@
 	{
 		public function add($sla_status)
 		{
-			
-			
-			if($sla_status->getNb() == 0)
-			{
-				echo "add";
-				$test = $sla_status->add();
-				if($test)
-				{
-					echo "<script>
-							Swal.fire
-							(
-								'success',
-								'Insertion successfully completed',
-								'success'
-							)
-						  </script>";
-				}
-				else
-				{
-					echo "<script>
-							Swal.fire
-							(
-								'error',
-								'<Exception>',
-								'error'
-							)
-						  </script>";
-				}
+			return $sla_status->add();
 				
-			}
-			else
-			{
-				if ($sla_status->getNb() >=1)
-				{
-					$test1 = $sla_status->update();
-					echo "test is ".$test1;
-					if($test1)
-					{
-						echo "<script>
-							Swal.fire
-							(
-								'success',
-								'Update done',
-								'success'
-							)
-						  </script>";
-					}
-					else
-					{
-						echo "<script>
-							Swal.fire
-							(
-								'error',
-								'Exception 1',
-								'error'
-							)
-						  </script>";
-					}
-					
-				}
-			}
 		}
 		
 		public function add_direct($sla_status)
@@ -311,6 +252,27 @@
 					}
 				);
 			</script>";
+		}
+		
+		public function getSla($T)
+		{
+			$tab = array();
+			$i = 0;
+			$h = new Host_Service();
+			foreach ($h->getAllService() as $v)
+			{
+				$id_service = $v{'id'};
+				$actual_sla=round($T[$v{'id'}]['sla'][0]['sla'],4);
+				$date_s = date('Y-m-d');
+				$tab[$i]=$service = array
+				(
+					'id_service'=>$id_service,
+					'actual_sla'=>$actual_sla,
+					'date_s'=>$date_s,
+				);
+                $i++;
+			}
+			return $tab;
 		}
 	}
 ?>

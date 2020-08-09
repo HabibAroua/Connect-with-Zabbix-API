@@ -4,12 +4,6 @@
     $c = new CService('this_year');
 	//print_r ($c->getAllSla());
 	$T = $c->getAllSla();
-	//foreach ($c->getAllSla() as $v)
-	//{
-		//print_r ($v);
-		//break;
-	//}
-	echo ($T[18]['sla'][0]['sla']);
 ?>
 <div id="page-inner">
     <div class="row">
@@ -43,45 +37,44 @@
 <?php
 	if(isset($_POST['bt_add_status']))
 	{
-        if(isset($_FILES['file']))
-        {
-            $name_file=$_FILES['file']['name'];
-            $tmp_file=$_FILES['file']['tmp_name'];
-            
-            if (($h = fopen($tmp_file, "r")) !== FALSE) 
+       $sla_statusController =new sla_statusController();
+       $sla_status =new sla_status();
+       if ($sla_status->getNb() == 8)
+       {
+            echo "<script>
+				Swal.fire
+				(
+					'success',
+					'Your SLA data has been inserted',
+					'error'
+				)
+			</script>"; 
+       }
+       else
+       {
+            if($sla_status->getNb() == 0)
             {
-                // Convert each line into the local $data variable
-                $sla_status =new sla_status();
-                
-                //echo $sla_status->toString();
-                $sla_statusController = new sla_statusController();
-                
-                $i=0;
-                while (($data = fgetcsv($h, 1000, ":")) !== FALSE) 
+                $i = 0;
+                foreach ($sla_statusController->getSla($T) as $v)
                 {
-                    $sla_status->setId_service($data[0]);
-                    $sla_status->setDate_s($data[1]);
-                    $sla_status->setActual_sla($data[2]);
-                    // Read the data from a single line
-                    $sla_statusController->add_direct($sla_status);
-                    $i++;
+                     //echo $v{'id_service'}.' '.$v{'actual_sla'}.' '.$v{'date_s'}.'<br>';
+                     $sla_status->setId_service($v{'id_service'});
+                     $sla_status->setDate_s($v{'date_s'});
+                     $sla_status->setActual_sla($v{'actual_sla'});
+                     // Read the data from a single line
+                     $sla_statusController->add($sla_status);
+                     $i++;
                 }
-                
-                // Close the file
-                fclose($h);
-                echo "<script>
-							Swal.fire
-							(
-								'success',
-								'Insertion of $i elements are inserted successfully',
-								'success'
-							)
-						</script>";
             }
-        }
-        else
-        {
-            echo "error";
-        }
-    }
+       }
+       
+        echo "<script>
+				Swal.fire
+				(
+					'success',
+					'Insertion of $i elements are inserted successfully',
+					'success'
+				)
+			</script>"; 
+       }
 ?>

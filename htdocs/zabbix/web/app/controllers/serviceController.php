@@ -57,10 +57,5 @@
 			$s = new Host_Service();
 			return $s->findNameById($id);
 		}
-		
-		public function getSlaByPeriod($p)
-		{
-			
-		}
 	}
 ?>
