@@ -1,3 +1,16 @@
+<?php
+    require('../../json/CService.php');
+    echo date('Y-m-d');
+    $c = new CService('this_year');
+	//print_r ($c->getAllSla());
+	$T = $c->getAllSla();
+	//foreach ($c->getAllSla() as $v)
+	//{
+		//print_r ($v);
+		//break;
+	//}
+	echo ($T[18]['sla'][0]['sla']);
+?>
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">

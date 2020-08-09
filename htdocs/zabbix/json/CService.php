@@ -1,19 +1,47 @@
 <?php
-
-	header('Access-Control-Allow-Origin: *');
+	/*
+	 header('Access-Control-Allow-Origin: *');
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
     header("Content-type:application/json");
-	
+	 */
 	class CService
 	{
 		private $from;
 		private $to;
 		
-		public function __construct($from,$to)
+		public function __construct($t)
 		{
-			$this->from=$from;
-			$this->to=$to;
+			switch($t)
+			{
+				case 'today' : 	$this->from = 1596754800;
+								$this->to = 1596803142 ;
+				break;
+				case 'this_week' : 	$this->from = 1596322800 ;
+									$this->to = 1596972487 ;
+				break;
+				case 'this_month' :	$this->from = 1596236400;
+									$this->to = 1596972606;
+				break;
+				case 'this_year' : 	$this ->from = 1577833200;
+									$this->to = 1596972708;
+				break;
+				case 'last_24' : 	$this->from = 1596886433;
+									$this->to = 1596972833;
+				break;
+				case'last_7_days' : $this->from = 1596368361;
+									$this->to = 1596973161;
+				break;
+				case 'last_30_days' : 	$this->from = 1594381199;
+										$this->to = 1596973199;
+				break;
+				case 'last_365_days' : $this->from = 1594381389;
+										$this->to = 1596973389;
+				break;
+				default : 	$this->from = 1596754800;
+							$this->to = 1596803142 ;
+				break;
+			}	
 		}
 		
 		//from
@@ -46,7 +74,7 @@
 			(
 				'jsonrpc' => '2.0',
 				'method' => 'service.getsla',
-				'params' => array('intervals'=>['from' => 1596754800 , 'to' => 1596803142]),
+				'params' => array('intervals'=>['from' => $this->from , 'to' => $this->to]),
 				'auth' => '70a11a43d883852779a206cc7c396793',
 				'id' => 1,
 			);
@@ -82,10 +110,9 @@
 			$responseData = json_decode($response, TRUE);
 			//print_r($responseData);
 			$T = $responseData['result'];
-			print_r($T[7]['sla'][0]['sla']);
+			//print_r($T[7]['sla'][0]['sla']);
+			return $T;
 		}
+		
 	}
-	// 'from' => 1596754800 , 'to' => 1596803142 --> Today
-	$c = new CService(1596754800,1596803142);
-	$c->getAllSla();
 ?>

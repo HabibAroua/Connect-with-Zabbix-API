@@ -1,5 +1,4 @@
 <?php
-
 	require_once('../app/controllers/session.php');
 	require_once('../app/database/connection.php');
 	require_once('../app/database/query.php');
