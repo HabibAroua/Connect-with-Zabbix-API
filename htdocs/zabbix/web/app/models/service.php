@@ -85,8 +85,7 @@
 						'$this->acceptable_sla
 					);"
 				);
-		}
-		
+		}		
 	}
 
 ?>

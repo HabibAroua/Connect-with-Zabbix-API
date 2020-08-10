@@ -3,6 +3,7 @@
     $c = new CService('this_year');
 	$T = $c->getAllSla();
     $sla_statusController =new sla_statusController();
+    $serviceController = new serviceController();
 ?>
 <div id="page-inner">
     <div class="row">
@@ -21,6 +22,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Id Service</th>
+                                                    <th>Service Name</th>
                                                     <th>Date</th>
                                                     <th>SLA</th>
                                                 </tr>
@@ -30,10 +32,12 @@
                                                     foreach ($sla_statusController->getSla($T) as $v)
                                                     {
                                                         $id_service = $v{'id_service'};
+                                                        $service_name = $serviceController->findNameById($id_service);
                                                         $date_s = $v{'date_s'};
                                                         $actual_sla = $v{'actual_sla'};
                                                         echo "<tr>";
                                                             echo "<td>$id_service</td>";
+                                                            echo "<td>$service_name</td>";
                                                             echo "<td>$date_s</td>";
                                                             echo "<td>$actual_sla</td>";
                                                         echo "</tr>";
@@ -78,7 +82,7 @@
                      $sla_status->setId_service($v{'id_service'});
                      $sla_status->setDate_s($v{'date_s'});
                      $sla_status->setActual_sla($v{'actual_sla'});
-                     // Read the data from a single line
+
                      $sla_statusController->add($sla_status);
                      $i++;
                 }
