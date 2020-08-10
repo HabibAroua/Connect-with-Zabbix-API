@@ -42,7 +42,6 @@
                                             </tbody>
                                         </table>
                                         <button name="bt_add_status"  class="btn btn-primary">Add</button>
-                                        <button type="button" class="btn btn-primary">Reset</button>
                                     </center>
 								</form>
 							</div>
