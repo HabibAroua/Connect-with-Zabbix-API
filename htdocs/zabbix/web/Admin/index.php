@@ -44,7 +44,7 @@
 							<img src="assets/img/find_user.png" class="user-image img-responsive"/>
 						</li>					
 						<li>
-							<a  href="#"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+							<a  href="index.php"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
 						</li>
 						<li>
 							<a  href="?page=list_service"><i class="fa fa-desktop fa-3x"></i> All Services</a>
@@ -111,7 +111,13 @@
 							break;
 							case 'getAllServices' : require_once('../app/views/getAllServices.php');
 							break;
+							default : require_once('../app/views/default.php');
+							break;
 						}
+					}
+					else
+					{
+						require_once('../app/views/default.php');
 					}
 				?>
 			</div>
