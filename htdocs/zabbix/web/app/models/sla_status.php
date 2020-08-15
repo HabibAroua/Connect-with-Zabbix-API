@@ -243,6 +243,27 @@
 			return $T;
 		}
 		
+		public function getAllSlaByService_Id($id)
+		{
+			//select sla_status.actual_sla from sla_status WHERE id_service = 9 ORDER By sla_status.date_s
+			$T= array();
+			$res=output(
+						"
+							select sla_status.actual_sla
+							from sla_status WHERE id_service = $id
+							ORDER By sla_status.date_s
+						"
+						);
+            $i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i]=$service = array($tab[0],);
+                $i++;
+			}
+			return $T;
+		}
+		
 		//toString
 		public function toString()
 		{

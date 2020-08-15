@@ -274,5 +274,11 @@
 			}
 			return $tab;
 		}
+		
+		public function getAllSlaByService_Id($id)
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getAllSlaByService_Id($id);
+		}
 	}
 ?>
