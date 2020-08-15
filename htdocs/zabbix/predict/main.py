@@ -6,11 +6,11 @@ import subprocess
 import webbrowser
 import sys
 
-url = 'https://www.facebook.com'
-if sys.platform == 'darwin':    # in case of OS X
-    subprocess.Popen(['open', url])
-else:
-    webbrowser.open_new_tab(url)
+#url = 'https://www.facebook.com'
+#if sys.platform == 'darwin':    # in case of OS X
+#    subprocess.Popen(['open', url])
+#else:
+#    webbrowser.open_new_tab(url)
 
 
 # split a univariate sequence into samples
