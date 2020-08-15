@@ -258,7 +258,7 @@
 			
             while($tab=$res->fetch(PDO::FETCH_NUM))
             {
-				$T[$i]=$service = array($tab[0],);
+				$T[$i]=$tab[0];
                 $i++;
 			}
 			return $T;
