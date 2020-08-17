@@ -3,14 +3,14 @@ class Element:
         self.host_name = host_name
         self.sla = sla
         
-    def getName(self):
+    def getHost_name(self):
         return self.host_name
     
-    def setName(self,host_name):
+    def setHost_name(self,host_name):
         self.host_name = host_name
         
-    def getAge(self):
+    def getSla(self):
         return self.sla
     
-    def setAge(self , sla):
+    def setSla(self , sla):
         self.sla = sla
