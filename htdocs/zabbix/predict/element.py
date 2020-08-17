@@ -16,4 +16,9 @@ class Element:
     def setSla(self , sla):
         self.sla = sla
         
-    #Add new method to convert string to double
+    #Add new method to convert string to float
+    def convertString_To_Float(self , sla):
+        tab = []
+        for i in range(0,len(self.sla)):
+            tab.append(float(sla[i]))
+        return tab
