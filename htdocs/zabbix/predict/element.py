@@ -15,3 +15,5 @@ class Element:
     
     def setSla(self , sla):
         self.sla = sla
+        
+    #Add new method to convert string to double

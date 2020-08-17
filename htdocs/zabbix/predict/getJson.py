@@ -8,11 +8,13 @@ with urllib.request.urlopen("http://localhost/zabbix/json/getAllSlaByService.php
     data = json.loads(url.read().decode())
     print(len(data))
 tab =[]
-line = []
-for i in range(0,len(data)):
-    for j in range(0,len(data[i]['list'])):
-            tab.append(float(data[i]['list'][j]))
-print(tab)
 
-e=Element("Sana",25)
-print(e.getSla())
+for i in range(0,len(data)):
+    e=Element(data[i]['host_name'],data[i]['list'])
+    tab.append(e)
+
+
+for i in range(0 , len(tab)):
+    print (tab[i].getHost_name())
+    print (tab[i].getSla())
+    
