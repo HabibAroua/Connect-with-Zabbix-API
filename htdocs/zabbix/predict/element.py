@@ -1,4 +1,5 @@
 class Element:
+    
     def __init__(self, host_name , sla):
         self.host_name = host_name
         self.sla = sla
