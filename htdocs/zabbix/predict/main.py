@@ -29,7 +29,7 @@ def split_sequence(sequence, n_steps):
 	return array(X), array(y)
 
 # define input sequence
-raw_seq = [57.5680, 99.5017, 100.000, 77.8002, 89.6547, 82.2569, 70.6391, 91.2530, 100.000 , 99.6325 , 80.2596]
+raw_seq = [89.7466,89.7466,98.2963,90.2963,98.6229,78.2574,78.2574,78.2574,91.4501,100,35.6969,98.6229,78.2574,98.2963,90.2963,89.7466,89.7466,89.7466,89.7466,98.2963,90.2963,98.6229,78.2574,78.2574,78.2574,91.4501,100,35.6969,98.6229,78.2574,98.2963,90.2963,89.7466,89.7466,89.7466]
 # choose a number of time steps
 n_steps = 3
 # split into samples
@@ -43,7 +43,7 @@ model.add(LSTM(50, activation='relu', input_shape=(n_steps, n_features)))
 model.add(Dense(1))
 model.compile(optimizer='adam', loss='mse')
 # fit model
-model.fit(X, y, epochs=200, verbose=0)
+model.fit(X, y, epochs=100, verbose=0)
 # demonstrate prediction
 x_input = array([min(raw_seq),(max(raw_seq)+(min(raw_seq))/2),max(raw_seq)])
 x_input = x_input.reshape((1, n_steps, n_features))
