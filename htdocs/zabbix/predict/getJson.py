@@ -15,6 +15,7 @@ for i in range(0,len(data)):
 
 
 for i in range(0 , len(tab)):
-    print (tab[i].getHost_name())
+    #print (tab[i].getHost_name())
     #print (tab[i].getSla())
-    print (tab[i].convertString_To_Float(tab[i].getSla()))
+    raw = tab[i].convertString_To_Float(tab[i].getSla())
+    print ("%s:%f"@{tab[i].getHost_name(),tab[i].calcul_prediction(raw)})

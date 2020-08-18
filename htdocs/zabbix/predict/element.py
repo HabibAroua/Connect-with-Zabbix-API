@@ -31,7 +31,7 @@ class Element:
             tab.append(float(sla[i]))
         return tab
     
-    def split_sequence(sequence, n_steps):
+    def split_sequence(self,sequence, n_steps):
         X, y = list(), list()
         for i in range(len(sequence)):
         	# find the end of this pattern
@@ -44,3 +44,25 @@ class Element:
         	X.append(seq_x)
         	y.append(seq_y)
         return array(X), array(y)
+    
+    def calcul_prediction(self,raw_seq):
+        # define input sequence
+        # choose a number of time steps
+        n_steps = 3
+        # split into samples
+        X, y = self.split_sequence(raw_seq, n_steps)
+        # reshape from [samples, timesteps] into [samples, timesteps, features]
+        n_features = 1
+        X = X.reshape((X.shape[0], X.shape[1], n_features))
+        # define model
+        model = Sequential()
+        model.add(LSTM(50, activation='relu', input_shape=(n_steps, n_features)))
+        model.add(Dense(1))
+        model.compile(optimizer='adam', loss='mse')
+        # fit model
+        model.fit(X, y, epochs=100, verbose=0)
+        # demonstrate prediction
+        x_input = array([min(raw_seq),(max(raw_seq)+(min(raw_seq))/2),max(raw_seq)])
+        x_input = x_input.reshape((1, n_steps, n_features))
+        yhat = model.predict(x_input, verbose=0)
+        return yhat[0][0]
