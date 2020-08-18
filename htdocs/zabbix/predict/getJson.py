@@ -33,6 +33,13 @@ def createNewFile(fileName):
         f= open(fileName,"w+")
     except Exception as e : 
         print(str(e))
+        
+def deleteFile(fileName):
+    try:
+        os.remove("ChangedFile.csv")
+        print("File Removed!")
+    except Exception as e : 
+        print(str(e))
 
 with urllib.request.urlopen("http://localhost/zabbix/json/getAllSlaByService.php") as url:
     data = json.loads(url.read().decode())
