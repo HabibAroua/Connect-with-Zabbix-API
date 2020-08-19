@@ -7,7 +7,7 @@ class File:
 	def __init__(self, fileName):
 		self.fileName = fileName
 		
-	def readFile(fileName):
+	def readFile(self,fileName):
 		try:
 			with open(fileName, 'r') as file:
 				data = file.read().replace('\n', '')
@@ -15,14 +15,14 @@ class File:
 		except Exception as e : 
 		    print(str(e))
 
-	def writeFile(fileName,line):
+	def writeFile(self,fileName,line):
 		try:
 			with open(fileName,'w') as f:
 				f.write(line)
 		except Exception as e : 
 			print("This file is not found : "+str(e))
 			
-	def addNewLineInFile(fileName,line):
+	def addNewLineInFile(self,fileName,line):
 		try:
 			hs = open(fileName,"a")
 			hs.write(line+"\n")
@@ -30,13 +30,13 @@ class File:
 		except Exception as e : 
 			print(str(e))
 			
-	def createNewFile(fileName):
+	def createNewFile(self,fileName):
 		try:
 			f= open(fileName,"w+")
 		except Exception as e : 
 			print(str(e))
 			
-	def deleteFile(fileName):
+	def deleteFile(self,fileName):
 		try:
 			os.remove("ChangedFile.csv")
 			print("File Removed!")
