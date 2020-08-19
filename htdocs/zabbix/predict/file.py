@@ -7,9 +7,9 @@ class File:
 	def __init__(self, fileName):
 		self.fileName = fileName
 		
-	def readFile(self,fileName):
+	def readFile(self):
 		try:
-			with open(fileName, 'r') as file:
+			with open(self.fileName, 'r') as file:
 				data = file.read().replace('\n', '')
 				return data
 		except Exception as e : 
@@ -22,17 +22,17 @@ class File:
 		except Exception as e : 
 			print("This file is not found : "+str(e))
 			
-	def addNewLineInFile(self,fileName,line):
+	def addNewLineInFile(self,line):
 		try:
-			hs = open(fileName,"a")
+			hs = open(self.fileName,"a")
 			hs.write(line+"\n")
 			hs.close()
 		except Exception as e : 
 			print(str(e))
 			
-	def createNewFile(self,fileName):
+	def createNewFile(self):
 		try:
-			f= open(fileName,"w+")
+			f= open(self.fileName,"w+")
 		except Exception as e : 
 			print(str(e))
 			

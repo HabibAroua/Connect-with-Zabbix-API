@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script type="text/javascript">
+            window.onload =
+            (
+                function ()
+                {
+                    var chart = new CanvasJS.Chart
+                    (
+                        "chartContainer",
+                        {
+                            title:
+                            {
+                                text: "My Chart in CanvasJS Arab countries"              
+                            },
+                            data:
+                            [
+                                {
+                                    // Change type to "doughnut", "line", "splineArea", etc.
+                                    type: "column",
+                                    dataPoints:
+                                    [
+                                        { label: "Iraq",  y: 40  },
+                                        { label: "Tunisia", y: 15  },
+                                        { label: "Algeria", y: 25  },
+                                        { label: "Palestine",  y: 30  },
+                                        { label: "Syria",  y: 28  },
+                                        { label: "Oman", y:24},
+                                    ]
+                                }
+                            ]
+                        }
+                    ); chart.render();
+                }
+            );
+        </script>
+    </head>
+    <body>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </body>
+</html>
