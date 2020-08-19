@@ -6,7 +6,7 @@ import subprocess
 import webbrowser
 import sys
 
-#url = 'https://www.facebook.com'
+#url = 'http://localhost/zabbix/predict/'
 #if sys.platform == 'darwin':    # in case of OS X
 #    subprocess.Popen(['open', url])
 #else:
