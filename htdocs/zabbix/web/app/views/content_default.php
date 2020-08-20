@@ -18,7 +18,7 @@
 					<div class="panel-body">
                         <div class="row">
                             <div class="form-group">
-                                <label>Select Example</label>
+                                <label>Select period</label>
                                 <select id="mySelect" class="form-control" onchange="changeSelect()">
 									<option>Your choice</option>
                                     <option value="today">Today</option>
@@ -61,7 +61,7 @@
                                 </table>
                             </div>
                             <div class="col-md-6">
-                                
+                                <div id="pushups"></div>
                             </div>
                         </div>
 					</div>
@@ -75,3 +75,17 @@
 <script>
     $("#example").dataTable();
 </script>
+<script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+	<?php
+    $sla_statusController = new sla_statusController();
+    $sla_statusController->getChart();
+  ?>
