@@ -38,9 +38,9 @@
 				case 'last_365_days' : $this->from = 1594381389;
 										$this->to = 1596973389;
 				break;
-				default : 	$this->from = 1596754800;
-							$this->to = 1596803142 ;
-				break;
+				//default : 	$this->from = 1596754800;
+				//			$this->to = 1596803142 ;
+				//break;
 			}	
 		}
 		

@@ -1,6 +1,6 @@
 <?php
     require('../../json/CService.php');
-    $c = new CService('this_year');
+    $c = new CService('today');
 	$T = $c->getAllSla();
     $sla_statusController =new sla_statusController();
     $serviceController = new serviceController();
