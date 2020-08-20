@@ -126,5 +126,6 @@ function update()
 
 function changeSelect()
 {
-	
+	var x = document.getElementById("mySelect").value;
+	alert(x);
 }

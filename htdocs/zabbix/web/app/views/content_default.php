@@ -1,3 +1,10 @@
+<script>
+	function changeSelect()
+	{
+		var x = document.getElementById("mySelect").value;
+		location.href = "index.php?period="+x;
+	}
+</script>
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">
@@ -12,7 +19,8 @@
                         <div class="row">
                             <div class="form-group">
                                 <label>Select Example</label>
-                                <select id="mySelect" class="form-control">
+                                <select id="mySelect" class="form-control" onchange="changeSelect()">
+									<option>Your choice</option>
                                     <option value="today">Today</option>
                                     <option value="this_week">This week</option>
                                     <option value="this_month">This month</option>
@@ -31,7 +39,6 @@
                                         <tr>
                                             <th>Id Service</th>
                                             <th>Service Name</th>
-                                            <th>Date</th>
                                             <th>SLA</th>
                                         </tr>
                                     </thead>
@@ -46,7 +53,6 @@
                                                 echo "<tr>";
                                                     echo "<td>$id_service</td>";
                                                     echo "<td>$service_name</td>";
-                                                    echo "<td>$date_s</td>";
                                                     echo "<td>$actual_sla</td>";
                                                 echo "</tr>";
                                             }
@@ -55,7 +61,7 @@
                                 </table>
                             </div>
                             <div class="col-md-6">
-                                hi
+                                
                             </div>
                         </div>
 					</div>
