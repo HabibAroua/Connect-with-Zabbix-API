@@ -7,42 +7,33 @@
         {
             case 'today' :  $c = new CService('today');
                             $T = $c->getAllSla();
-                            echo $c->getTo();
             break;
             case 'this_week' :  $c = new CService('this_week');
                                 $T = $c->getAllSla();
-                                echo $c->getTo();
             break;
             case 'this_month' : $c = new CService('this_month');
                                 $T = $c->getAllSla();
-                                echo $c->getTo();
             break;
             case 'this_year' :  $c = new CService('this_year');
                                 $T = $c->getAllSla();
-                                echo $c->getTo();
             break;
             case 'last_24' :    $c = new CService('last_24');
                                 $T = $c->getAllSla();
-                                echo $c->getTo();
             break;
             case'last_7_days' : $c = new CService('last_7_days');
                                 $T = $c->getAllSla();
-                                echo $c->getTo();
             break;
             case 'last_30_days' :   $c = new CService('last_30_days');
                                     $T = $c->getAllSla();
-                                    echo $c->getTo();
             break;
             case 'last_365_days' :  $c = new CService('last_365_days');
                                     $T = $c->getAllSla();
-                                    echo $c->getTo();
             break;
             default :   $c = new CService('today');
                         $T = $c->getAllSla();
             break;
         }
-        $c = new CService('today');
-        $T = $c->getAllSla();
+        
         $sla_statusController =new sla_statusController();
         $serviceController = new serviceController();
         require("content_default.php");    
