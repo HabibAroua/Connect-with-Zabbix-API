@@ -280,5 +280,47 @@
 			$sla_status = new sla_status();
 			return $sla_status->getAllSlaByService_Id($id);
 		}
+		
+		public function chartFromTab($T)
+		{
+			$list = "";
+			
+			foreach ($T as $v)
+			{
+				//service_name'=>$service_name,'actual_sla'
+				$service_name = $v{'service_name'};
+				$actual_sla = $v{'actual_sla'};
+				$value_sla = new value_sla();
+				$value = $value_sla->getValue_Sla();
+				
+				$list =  $list ."{ Service: '$service_name', SLA: $value, Actual_sla: '$actual_sla' },";
+			}
+			$data ="data:
+						[
+							$list
+						],";
+			echo
+			"<script>
+				new Morris.Line
+				(
+					{
+						// ID of the element in which to draw the chart.
+						element: 'pushups',
+						// Chart data records -- each entry in this array corresponds to a point on
+						// the chart.
+						$data
+						// The name of the data record attribute that contains x-values.
+						xkey: 'Service',
+						parseTime: false,
+						// A list of names of data record attributes that contain y-values.
+						ykeys: ['SLA','Actual_sla'],
+						// Labels for the ykeys -- will be displayed when you hover over the
+						// chart.
+						labels: ['SLA','Actual_sla'],
+						lineColors: ['#373651','#E65A26']
+					}
+				);
+			</script>";
+		}
 	}
 ?>

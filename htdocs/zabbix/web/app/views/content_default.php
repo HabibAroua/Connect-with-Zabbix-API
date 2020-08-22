@@ -20,7 +20,7 @@
                             <div class="form-group">
                                 <label>Select period</label>
                                 <select id="mySelect" class="form-control" onchange="changeSelect()">
-									<option>Your choice</option>
+																		<option>Your choice</option>
                                     <option value="today">Today</option>
                                     <option value="this_week">This week</option>
                                     <option value="this_month">This month</option>
@@ -31,7 +31,7 @@
                                     <option value="last_365_days">Last 365 days</option>
                                 </select>
                             </div>
-						</div>
+												</div>
                         <div class="row">
                             <div class="col-md-6">
                                 <table  class="table table-striped table-hover" id="example">
@@ -44,12 +44,16 @@
                                     </thead>
                                     <tbody>
                                         <?php
+																						$T1 = array();
+																						$i = 0;
                                             foreach ($sla_statusController->getSla($T) as $v)
                                             {
                                                 $id_service = $v{'id_service'};
                                                 $service_name = $serviceController->findNameById($id_service);
                                                 $date_s = $v{'date_s'};
                                                 $actual_sla = $v{'actual_sla'};
+																								$T1[$i] = $result = array('service_name'=>$service_name,'actual_sla'=>$actual_sla,);
+																								$i++;
                                                 echo "<tr>";
                                                     echo "<td>$id_service</td>";
                                                     echo "<td>$service_name</td>";
@@ -87,5 +91,5 @@
     <script src="assets/js/custom.js"></script>
 	<?php
     $sla_statusController = new sla_statusController();
-    $sla_statusController->getChart();
+    $sla_statusController->chartFromTab($T1);
   ?>
