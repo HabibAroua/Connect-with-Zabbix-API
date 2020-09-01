@@ -22,7 +22,7 @@
 		$tab[$i] = $res= array
 					(
 						'host_name' => $host_name,
-						'list' => $sla_statusController->getAllSlaByService_Id($id) ,
+						'list' => $sla_statusController->getAllSlaByService_IdByYear($id) ,
 					);
 		$i++;
 	}

@@ -264,6 +264,30 @@
 			return $T;
 		}
 		
+		//01/09/2020 dev getAllServiceId_By_Year
+		public function getAllServiceId_By_Year($id)
+		{
+			$T = array();
+			$res = output
+					(
+						"
+							select  AVG(sla_status.actual_sla)
+							from sla_status
+							WHERE id_service = $id
+							group by year(sla_status.date_s)
+
+						"
+					);
+			$i=0;
+			
+            while($tab=$res->fetch(PDO::FETCH_NUM))
+            {
+				$T[$i]=$tab[0];
+                $i++;
+			}
+			return $T;
+		}
+		
 		//toString
 		public function toString()
 		{

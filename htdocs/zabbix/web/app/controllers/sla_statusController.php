@@ -281,6 +281,12 @@
 			return $sla_status->getAllSlaByService_Id($id);
 		}
 		
+		public function getAllSlaByService_IdByYear($id)
+		{
+			$sla_status = new sla_status();
+			return $sla_status->getAllServiceId_By_Year($id);
+		}
+		
 		public function chartFromTab($T)
 		{
 			$list = "";
