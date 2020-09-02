@@ -1,7 +1,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Zabbix Admin</title>
+	<title>Admin</title>
 	<link rel="icon" type="image/png" href="picture/zabbix_logo.png" />
 	<!-- BOOTSTRAP STYLES-->
 	<link href="assets/css/bootstrap.css" rel="stylesheet" />

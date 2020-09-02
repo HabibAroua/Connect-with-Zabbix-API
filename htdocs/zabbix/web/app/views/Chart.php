@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col-md-12">
             <center>
-                <h2>Sla analytics</h2>
+                <h2>Actual SLA statistics</h2>
             </center>
         </div>
 		<div class="row">
-            <div class="col-md-12">
-				<div id="pushups"></div>
+      <div class="col-md-12">
+				<div style="height:2000px; weight:100px;" id="pushups"></div>
 			</div>
 		</div>
 	</div>

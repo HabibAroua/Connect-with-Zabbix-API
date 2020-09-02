@@ -6,13 +6,6 @@ import subprocess
 import webbrowser
 import sys
 
-#url = 'http://localhost/zabbix/predict/'
-#if sys.platform == 'darwin':    # in case of OS X
-#    subprocess.Popen(['open', url])
-#else:
-#    webbrowser.open_new_tab(url)
-
-
 # split a univariate sequence into samples
 def split_sequence(sequence, n_steps):
 	X, y = list(), list()

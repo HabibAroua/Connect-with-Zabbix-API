@@ -27,7 +27,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">Zabbix Admin</a> 
+					<a class="navbar-brand" href="index.html">Admin</a> 
 				</div>
 				<div style="color: white; padding: 15px 50px 5px 50px; float: right;font-size: 16px;"> 
 					Last access : <?php echo date('Y-m-d'); ?> 
@@ -50,7 +50,7 @@
 							<a  href="?page=list_service"><i class="fa fa-desktop fa-3x"></i> All Services</a>
 						</li>
 						<li>
-							<a href="index.php?page=add_service"><i class="fa fa-edit fa-3x"></i> Add Host </a>
+							<a href="index.php?page=add_service"><i class="fa fa-edit fa-3x"></i> Add Service </a>
 						</li>
 						<li>
 							<a href="index.php?page=add_status_sla"><i class="fa fa-edit fa-3x"></i>Add sla status</a>
