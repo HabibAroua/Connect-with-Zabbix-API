@@ -21,34 +21,36 @@
 		<title>Result of prediction</title>
 		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <?php
-			echo "<script type='text/javascript'>
-            window.onload =
-            (
-                function ()
-                {
-                    var chart = new CanvasJS.Chart
-                    (
-                        'chartContainer',
-                        {
-                            title:
-                            {
-                                text: 'The result of prediction'              
-                            },
-                            data:
-                            [
-                                {
-                                    type: 'column',
-                                    dataPoints:
-                                    [
-                                        $ch
-                                    ]
-                                }
-                            ]
-                        }
-                    ); chart.render();
-                }
-            );
-        </script>"
+			echo "
+			<script type='text/javascript'>
+				window.onload =
+				(
+					function ()
+					{
+						var chart = new CanvasJS.Chart
+						(
+							'chartContainer',
+							{
+								title:
+								{
+									text: 'The result of prediction next day'              
+								},
+								data:
+								[
+									{
+										type: 'column',
+										dataPoints:
+										[
+											$ch
+										]
+									}
+								]
+							}
+						); chart.render();
+					}
+				);
+			</script>
+		"
 		?>
 	</head>
 	<body>
