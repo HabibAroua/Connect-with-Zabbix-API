@@ -27,82 +27,14 @@ class Navbar extends Component
                         {localStorage.usertoken}
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link to="/allObject" className="nav-link">
-                        All Objects
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/map" className="nav-link">
-                        Map
-                    </Link>
-                </li>
+                
             </ul>
         )
         const userLink = (
             <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link to="/profile" className="nav-link">
-                        My Profile
-                    </Link>
-                </li>
                 <li className="nav-item" id="usermanagement">
                     <Link to="/register" className="nav-link">
-                        User Management
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/statistics" className="nav-link">
-                        Statistics
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/notification" className="nav-link">
-                        Notifications ({this.state.nb})
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/order" className="nav-link">
-                        Order
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/map" className="nav-link">
-                        Map
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        )
-        const userSimple = (
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link to="/statistics" className="nav-link">
-                        Statistics
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/notification" className="nav-link">
-                        Notifications
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/order" className="nav-link">
-                        Order
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/allObject" className="nav-link">
-                        All Objects
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/map" className="nav-link">
-                        Map1
+                        Enter SLA
                     </Link>
                 </li>
                 <li className="nav-item">
