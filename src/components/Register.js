@@ -56,13 +56,17 @@ export default class PersonList extends React.Component
   {
       return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Enter SLA value:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
+          <center>
+            <form onSubmit={this.handleSubmit}>
+                <br />
+                <br />
+                <label>
+                    Enter SLA value:
+                    <input class="form-control" type="text" name="name" onChange={this.handleChange} />
+                </label>
+                <button class="btn btn-primary" type="submit">Add</button>
+            </form>
+          </center>
       </div>
     )
   }
