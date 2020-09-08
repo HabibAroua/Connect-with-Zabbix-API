@@ -7,28 +7,40 @@
 	require_once('../web/app/models/value_sla.php');
 	require_once('../web/app/controllers/value_slaController.php');
 	require_once('../web/app/controllers/serviceController.php');
-	//require_once('../security/security.php');
-	
-	$value_sla= new value_slaController();
-	
-	$v = new value_sla();
-	if(isset($_POST['value']))
+	require_once('../security/security.php');
+	try
 	{
-		$v->setValue($_POST['value']);
-		
-		if($value_sla->getNbValue_Sla()>0)
+		$data = json_decode(file_get_contents("php://input"));
+		//echo "received data";
+		//print_r($data);
+		$x= json_encode($data);
+		$y = json_decode($x,TRUE);
+		if(isset($y['sla']))
 		{
-			$value_sla->update($v);
-		}
+			$sla = $y['sla'];
+	
+			$value_sla= new value_slaController();
+	
+			$v = new value_sla();
+	
+			$v->setValue($sla);
 		
+			if($value_sla->getNbValue_Sla()>0)
+			{
+				$value_sla->update($v);
+			}	
+			else
+			{
+				$value_sla->add($v);
+			}
+		}
 		else
 		{
-			$value_sla->add($v);
+			echo "Error";
 		}
 	}
-	else
+	catch(Exception $e)
 	{
 		echo "Error";
 	}
-	
 ?>
