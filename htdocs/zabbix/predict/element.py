@@ -65,6 +65,4 @@ class Element:
         x_input = array([min(raw_seq),(max(raw_seq)+(min(raw_seq))/2),max(raw_seq)])
         x_input = x_input.reshape((1, n_steps, n_features))
         yhat = model.predict(x_input, verbose=0)
-		if yhat[0][0] > 100:
-			yhat[0][0] = 100
         return yhat[0][0]
