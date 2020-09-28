@@ -17,14 +17,14 @@
 			}
 			else
 			{
-				echo "<script>
+				echo "	<script>
 						Swal.fire
 						(
 							'error',
 							'Email or password are not correct',
 							'error'
 						)
-						</script>";
+					</script>";
 			}
 		}
 		
